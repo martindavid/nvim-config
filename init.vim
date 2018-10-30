@@ -1,3 +1,5 @@
+let g:maplocalleader=';'
+
 source $HOME/.config/nvim/config/01.plugins.vim
 source $HOME/.config/nvim/config/02.init.vim
 source $HOME/.config/nvim/config/03.powerline.vim

@@ -2,15 +2,15 @@ let $VIMPATH = fnamemodify(resolve(expand('<sfile>:p')), ':h:h')
 let $VARPATH = expand(($XDG_CACHE_HOME ? $XDG_CACHE_HOME : '~/.cache').'/vim')
 
 " Required:
-set runtimepath+=/Users/martin.valentino/.cache/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-if dein#load_state('/Users/martin.valentino/.cache/dein')
-	call dein#begin('/Users/martin.valentino/.cache/dein')
+if dein#load_state('~/.cache/dein')
+	call dein#begin('~/.cache/dein')
 
 	" Let dein manage dein
 	" Required:
-	call dein#add('/Users/martin.valentino/.cache/dein/repos/github.com/Shougo/dein.vim')
+	call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
 
 	" Add or remove your plugins here:
 	call dein#add('rafi/awesome-vim-colorschemes')
@@ -27,6 +27,7 @@ if dein#load_state('/Users/martin.valentino/.cache/dein')
 	call dein#add('Shougo/neosnippet.vim')
 	call dein#add('Shougo/neosnippet-snippets')
 	call dein#add('Shougo/context_filetype.vim')
+	call dein#add('Shougo/denite.nvim', {'on_cmd': 'Denite', 'hook_source': 'source $VIMPATH/plugins/denite.vim'})
 
 	
 	" Javascript
