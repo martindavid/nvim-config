@@ -27,6 +27,7 @@ if dein#load_state('~/.cache/dein')
 	call dein#add('Shougo/neosnippet.vim')
 	call dein#add('Shougo/neosnippet-snippets')
 	call dein#add('Shougo/context_filetype.vim')
+	call dein#add('mhinz/vim-signify')
 	call dein#add('Shougo/denite.nvim', {'on_cmd': 'Denite', 'hook_source': 'source $VIMPATH/plugins/denite.vim'})
 
 	

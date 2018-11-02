@@ -47,6 +47,7 @@ if dein#tap('jedi-vim')
 	let g:jedi#goto_assignments_command = '<leader>g'
 	let g:jedi#rename_command = '<Leader>r'
 	let g:jedi#usages_command = '<Leader>n'
+	let g:jedi#use_splits_not_buffers = 'right'
 endif
 
 if dein#tap('tern_for_vim')
@@ -59,7 +60,11 @@ if dein#tap('tern_for_vim')
 endif
 
 if dein#tap('emmet-vim')
-	autocmd FileType html,css,jsx,javascript,javascript.jsx
+  let g:use_emmet_complete_tag = 0
+	let g:user_emmet_install_global = 0
+	let g:user_emmet_install_command = 0
+	let g:user_emmet_mode = 'i'
+	autocmd FileType html,css,jsx,javascript,javascript.jsx,htmldjango
 		\ EmmetInstall
 		\ | imap <buffer> <C-Return> <Plug>(emmet-expand-abbr)
 endif
@@ -71,12 +76,6 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_check_on_w = 1
 let g:syntastic_javascript_checkers=['eslint']
 let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
-
-
-let g:use_emmet_complete_tag = 0
-let g:user_emmet_install_global = 0
-let g:user_emmet_install_command = 0
-let g:user_emmet_mode = 'i'
 
 
 let g:lint_filetypes = ['yaml.ansible', 'python', 'php', 'ruby', 'vim', 'go', 'sh', 'javascript', 'jsx', 'javascript.jsx', 'json', 'css', 'markdown', 'html', 'yaml']
@@ -117,7 +116,7 @@ if ! empty(g:python3_host_prog)
 	let g:neomake_python_python_exe = g:python3_host_prog
 endif
 
-let g:neomake_python_enabled_makers = ['pep8', 'pylint', 'flake8']
+let g:neomake_python_enabled_makers = ['pep8', 'pylint', 'flake8', 'pylama']
 
 " JAVASCRIPT / JSX
 let g:neomake_jsx_enabled_makers = ['eslint']

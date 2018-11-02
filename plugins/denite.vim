@@ -76,7 +76,6 @@ let insert_mode_mappings = [
 	\  ['<C-P>', '<denite:assign_previous_matched_text>', 'noremap'],
 	\  ['<Up>', '<denite:assign_previous_text>', 'noremap'],
 	\  ['<Down>', '<denite:assign_next_text>', 'noremap'],
-	\  ['<C-Y>', '<denite:redraw>', 'noremap'],
 	\  ['<BS>', '<denite:smart_delete_char_before_caret>', 'noremap'],
 	\  ['<C-h>', '<denite:smart_delete_char_before_caret>', 'noremap'],
 	\ ]
