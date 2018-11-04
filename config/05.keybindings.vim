@@ -16,6 +16,11 @@ map <F2> :NERDTreeToggle<CR>
 nnoremap <silent> q :<C-u>:quit<CR>
 autocmd FileType man nnoremap <silent><buffer> q :<C-u>:quit<CR>
 
+
+" Buffers
+nnoremap <leader>b :ls<CR>:b<Space>
+nnoremap gb :ls<CR>:b<Space>
+
 " Tabs
 nnoremap <silent> g0 :<C-u>tabfirst<CR>
 nnoremap <silent> g$ :<C-u>tablast<CR>

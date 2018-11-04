@@ -13,7 +13,7 @@ set encoding=utf-8
 set nobackup
 set noswapfile
 
-colorscheme gruvbox
+colorscheme hybrid_material
 set background=dark
 
 " SPACE AND TABS

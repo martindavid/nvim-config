@@ -1,5 +1,5 @@
 " vim powerline options
-let g:airline_theme='solarized'
+let g:airline_theme='hybrid'
 
 " don't overwrite symbols if they already exist
 if !exists('g:airline_symbols')
@@ -36,5 +36,6 @@ let g:airline_symbols.linenr = ''
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#bufferline#enabled = 1
-let g:airline#extensions#tagbar#enabled = 1
 let g:airline#extensions#ale#enabled = 1
+
+let g:airline#extensions#tabline#enabled = 1
