@@ -9,7 +9,7 @@ This is a place where I put all of my (Neo)vim configuration. This will be a liv
 
 ## Install
 
-**_1._** Let's clone this repo! Clone to `~/.config/nvim`,
+Clone this repo! Clone to `~/.config/nvim`,
 we'll also symlink it for Vim:
 
 ```sh
@@ -55,8 +55,41 @@ Name          | Description
 [ludovicchabant/vim-gutentags] | A Vim plugin that manages your tag files
 [benekastah/neomake] | Asynchronous linting and make framework for Neovim/Vim
 
-
 # Credits
 Credits to all of these maintainer who open-source their (Neo)vim config that I can learn.
 - [rafi/vim-config]
 - [SpaceVim/SpaceVim]
+
+[Shougo/dein.vim]: https://github.com/Shougo/dein.vim
+[rafi/awesome-colorschemes]: https://github.com/rafi/awesome-colorschemes
+[scrooloose/nerdcommenter]: https://github.com/scrooloose/nerdcommenter
+[scrooloose/nerdtree]: https://github.com/scrooloose/nerdtree
+[itchyny/cursorword]: https://github.com/itchyny/cursorword
+[Xuyuanp/nerdtree-git-plugin]: https://github.com/Xuyuanp/nerdtree-git-plugin
+[Konfekt/FastFold]: https://github.com/Konfekt/FastFold
+[vim-airline/vim-airline]: https://github.com/vim-airline/vim-airline
+[vim-airline/vim-airline-themes]: https://github.com/vim-airline/vim-airline-themes
+[sheerun/vim-polyglot]: https://github.com/sheerun/vim-polyglot
+[nvie/vim-flake8]: https://github.com/nvie/vim-flake8
+[ctrlpvim/ctrlp.vim]: https://github.com/ctrlpvim/ctrlp.vim
+[Raimondi/delimitMate]: https://github.com/Raimondi/delimitMate
+[Shougo/neosnippet.vim]: https://github.com/Shougo/neosnippet.vim
+[Shougo/neosnippet-snippets]: https://github.com/Shougo/neosnippet-snippets
+[Shougo/context_filetype.vim]: https://github.com/Shougo/context_filetype.vim
+[mhinz/vim-signify]: https://github.com/mhinz/vim-signify
+[Shougo/denite.nvim]: https://github.com/Shougo/denite.nvim
+[pangloss/vim-javascript]: https://github.com/pangloss/vim-javascript
+[othree/jspc.vim]: https://github.com/othree/jspc.vim
+[moll/vim-node]: https://github.com/moll/vim-node
+[elzr/vim-json]: https://github.com/elzr/vim-json
+[tmhedberg/SimpylFold]: https://github.com/tmhedberg/SimpylFold
+[Shougo/deoplete.nvim]: https://github.com/Shougo/deoplete.nvim
+[zchee/deoplete-jedi]: https://github.com/zchee/deoplete-jedi
+[carlitux/deoplete-ternjs]: https://github.com/carlitux/deoplete-ternjs
+[ternjs/tern_for_vim]: https://github.com/ternjs/tern_for_vim
+[davidhalter/jedi-vim]: https://github.com/davidhalter/jedi-vim
+[mattn/emmet-vim]: https://github.com/mattn/emmet-vim
+[ludovicchabant/vim-gutentags]: https://github.com/ludovicchabant/vim-gutentags
+[benekastah/neomake]: https://github.com/benekastah/neomake
+[rafi/vim-config]: https://github.com/rafi/vim-config
+[SpaceVim/SpaceVim]: https://github.com/SpaceVim/SpaceVim
