@@ -31,6 +31,7 @@ if dein#load_state('~/.cache/dein')
 
 	
 	" Javascript
+	call dein#add('ternjs/tern_for_vim', {'on_ft': ['javascript', 'jsx', 'javascript.jsx']})
 	call dein#add('pangloss/vim-javascript', { 'on_ft': [ 'javascript', 'jsx', 'javascript.jsx' ] })
 	call dein#add('othree/jspc.vim', {'on_ft': [ 'javascript', 'jsx', 'javascript.jsx' ]})
 	call dein#add('moll/vim-node', {'on_ft': [ 'javascript', 'jsx', 'javascript.jsx' ]})
