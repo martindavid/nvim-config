@@ -1,3 +1,5 @@
+
+
 if dein#tap('denite.nvim')
 	nnoremap <silent><LocalLeader>r :<C-u>Denite -resume -refresh<CR>
 	nnoremap <silent><LocalLeader>f :<C-u>Denite file/rec<CR>
@@ -43,8 +45,8 @@ endif
 if dein#tap('jedi-vim')
 	let g:jedi#completions_command = ''
 	let g:jedi#documentation_command = 'K'
-	let g:jedi#goto_command = '<C-]>'
-	let g:jedi#goto_assignments_command = '<leader>g'
+	let g:jedi#goto_command = '<Leader>d'
+	let g:jedi#goto_assignments_command = '<Leader>g'
 	let g:jedi#rename_command = '<Leader>r'
 	let g:jedi#usages_command = '<Leader>n'
 	let g:jedi#use_splits_not_buffers = 'right'
@@ -68,14 +70,6 @@ if dein#tap('emmet-vim')
 		\ EmmetInstall
 		\ | imap <buffer> <C-Return> <Plug>(emmet-expand-abbr)
 endif
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_check_on_w = 1
-let g:syntastic_javascript_checkers=['eslint']
-let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
 
 
 let g:lint_filetypes = ['yaml.ansible', 'python', 'php', 'ruby', 'vim', 'go', 'sh', 'javascript', 'jsx', 'javascript.jsx', 'json', 'css', 'markdown', 'html', 'yaml']
@@ -116,7 +110,7 @@ if ! empty(g:python3_host_prog)
 	let g:neomake_python_python_exe = g:python3_host_prog
 endif
 
-let g:neomake_python_enabled_makers = ['pep8', 'pylint', 'flake8', 'pylama']
+let g:neomake_python_enabled_makers = ['pylama']
 
 " JAVASCRIPT / JSX
 let g:neomake_jsx_enabled_makers = ['eslint']
@@ -132,13 +126,7 @@ nmap <Leader><Space>n :lnext<CR>      " next error/warning
 nmap <Leader><Space>p :lprev<CR>      " previous error/warning
 
 
-" Deoplete
-source $VIMPATH/plugins/deoplete.vim
-call deoplete#enable()
-
-
 autocmd FileType javascript setlocal omnifunc=tern#Complete
-
 
 let g:delimitMate_expand_cr = 1
 let g:delimitMate_excluded_ft = 'html'
@@ -152,12 +140,3 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:javascript_plugin_jsdoc = 1 
 let g:javascript_plugin_flow = 1
 highlight! link jsFutureKeys PreProc
-
-
-" Neosnippet
-let g:neosnippet#data_directory = $VARPATH.'/snippets'
-let g:neosnippet#enable_snipmate_compatibility = 1
-let g:neosnippet#enable_completed_snippet = 1
-let g:neosnippet#expand_word_boundary = 1
-autocmd CompleteDone * call neosnippet#complete_done()
-autocmd InsertLeave * NeoSnippetClearMarkers

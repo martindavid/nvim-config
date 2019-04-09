@@ -9,7 +9,7 @@ syntax enable
 filetype plugin indent on
 set clipboard=unnamed
 set encoding=utf-8
-
+set termguicolors
 set nobackup
 set noswapfile
 
@@ -17,7 +17,6 @@ colorscheme hybrid_material
 set background=dark
 
 " SPACE AND TABS
-set textwidth=120
 set tabstop=2		    " number of visual spaces per TAB
 set softtabstop=2   " number of spaces in tab when editing
 set expandtab		    " tabs are spaces
@@ -58,6 +57,8 @@ endif
 set switchbuf=useopen,usetab    " Jump to the first open window in any tab
 set switchbuf+=vsplit           " Switch buffer behavior to vsplit
 
+
+let g:python_highlight_all = 1
 
 " Improved Vim fold-text
 " See: http://www.gregsexton.org/2011/03/improving-the-text-displayed-in-a-fold/

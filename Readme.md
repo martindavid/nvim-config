@@ -31,7 +31,7 @@ Name          | Description
 [Xuyuanp/nerdtree-git-plugin] | NERDTree plugin for showing git status
 [Konfekt/FastFold] | Speed up Vim by updating folds only when called-for.
 [vim-airline/vim-airline] | Lean & mean status/tabline for vim that's light as air
-[vim-airline/vim-airline-themes] | A collection of themes for vim-airline
+[vim-airline/vim-airline-themes] | A collection of themes for vineomm-airline
 [sheerun/vim-polyglot] | A solid language pack for Vim
 [nvie/vim-flake8] | Flake8 plugin for Vim
 [ctrlpvim/ctrlp.vim] | Fuzzy file, buffer, mru, tag, etc finder

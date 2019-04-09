@@ -18,17 +18,15 @@ if dein#load_state('~/.cache/dein')
   call dein#add('scrooloose/nerdtree')
 	call dein#add('Xuyuanp/nerdtree-git-plugin')
 	call dein#add('itchyny/vim-cursorword')
-	call dein#add('Konfekt/FastFold')
 	call dein#add('vim-airline/vim-airline')
 	call dein#add('vim-airline/vim-airline-themes')
 	call dein#add('sheerun/vim-polyglot')
   call dein#add('nvie/vim-flake8')
   call dein#add('ctrlpvim/ctrlp.vim')
 	call dein#add('Raimondi/delimitMate')
-	call dein#add('Shougo/neosnippet.vim')
-	call dein#add('Shougo/neosnippet-snippets')
 	call dein#add('Shougo/context_filetype.vim')
 	call dein#add('mhinz/vim-signify')
+	call dein#add('wakatime/vim-wakatime')
 	call dein#add('Shougo/denite.nvim', {'on_cmd': 'Denite', 'hook_source': 'source $VIMPATH/plugins/denite.vim'})
 
 	
@@ -40,22 +38,12 @@ if dein#load_state('~/.cache/dein')
 
 	" Python
 	call dein#add('tmhedberg/SimpylFold', {'on_ft': 'python'})
+	call dein#add('davidhalter/jedi-vim', {'on_ft': 'python' })
 
-	" Completion
-	call dein#add('Shougo/deoplete.nvim')
-	
-	call dein#add('zchee/deoplete-jedi', { 'on_ft': 'python',
-		\ 'on_i': '1',
-		\ 'hook_source': 'autocmd FileType python setlocal omnifunc=' })
-
-	call dein#add('carlitux/deoplete-ternjs', {'on_i': 1, 'on_ft': ['javascript', 'jsx', 'javascript.jsx']})
-
-	call dein#add('ternjs/tern_for_vim', {'on_ft': ['javascript', 'jsx', 'javascript.jsx']})
-  call dein#add('davidhalter/jedi-vim', {'on_ft': 'python' })
 	call dein#add('mattn/emmet-vim', { 'on_i': 1, 'on_ft': [ 'html', 'css', 'jsx', 'javascript', 'javascript.jsx'] })
 	
 	call dein#add('ludovicchabant/vim-gutentags', { 'on_path': '.*' })
-	call dein#add('benekastah/neomake')
+	call dein#add('neomake/neomake')
 
 	" Required:
 	call dein#end()

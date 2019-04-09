@@ -4,12 +4,15 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
 
 " NERDTree
 
-let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree"
+let NERDTreeIgnore=['\.pyc$', '\~$', '.DS_Store'] "ignore files in NERDTree"
 let NERDTreeShowHidden=1
-let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 map <F2> :NERDTreeToggle<CR>
 
 " I like to :quit with 'q', shrug.
@@ -32,3 +35,14 @@ nnoremap <silent> <C-S-Tab> :<C-U>tabprevious<CR>
 " Uses g:lasttab set on TabLeave in MyAutoCmd
 let g:lasttab = 1
 nmap <silent> \\ :execute 'tabn '.g:lasttab<CR>
+nnoremap <C-tab>   :bnext<CR>
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+nmap <leader>1 <Plug>AirlineSelectTab1
+nmap <leader>2 <Plug>AirlineSelectTab2
+nmap <leader>3 <Plug>AirlineSelectTab3
+nmap <leader>4 <Plug>AirlineSelectTab4
+nmap <leader>5 <Plug>AirlineSelectTab5
+nmap <leader>6 <Plug>AirlineSelectTab6
+nmap <leader>7 <Plug>AirlineSelectTab7
+nmap <leader>8 <Plug>AirlineSelectTab8
+nmap <leader>9 <Plug>AirlineSelectTab9
