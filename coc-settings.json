@@ -1,0 +1,12 @@
+{
+  "tsserver.enable": true,
+  "tslint.autoFixOnSave": true,
+  "tslint.jsEnable": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "Markdown",
+    "javascript",
+    "typescript",
+    "python"
+  ]
+}

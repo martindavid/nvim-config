@@ -28,14 +28,21 @@ if dein#load_state('~/.cache/dein')
 	call dein#add('mhinz/vim-signify')
 	call dein#add('wakatime/vim-wakatime')
 	call dein#add('Shougo/denite.nvim', {'on_cmd': 'Denite', 'hook_source': 'source $VIMPATH/plugins/denite.vim'})
+	call dein#add('justinmk/vim-sneak')
+
+	" Autocompletion
+	call dein#add('neoclide/coc.nvim', {'build': 'yarn install --frozen-lockfile'})
 
 	
 	" Javascript
 	call dein#add('ternjs/tern_for_vim', {'on_ft': ['javascript', 'jsx', 'javascript.jsx']})
-	call dein#add('pangloss/vim-javascript', { 'on_ft': [ 'javascript', 'jsx', 'javascript.jsx' ] })
+	call dein#add('pangloss/vim-javascript')
 	call dein#add('othree/jspc.vim', {'on_ft': [ 'javascript', 'jsx', 'javascript.jsx' ]})
 	call dein#add('moll/vim-node', {'on_ft': [ 'javascript', 'jsx', 'javascript.jsx' ]})
 	call dein#add('elzr/vim-json', {'on_ft': 'json'})
+	call dein#add('mxw/vim-jsx')
+  call dein#add('mhartington/nvim-typescript', {'build': './install.sh'})
+	call dein#add('prettier/vim-prettier', { 'build': 'yarn install', 'on_ft': ['javascript', 'jsx', 'javascript.jsx', 'typescript' ] })
 
 	" Python
 	call dein#add('tmhedberg/SimpylFold', {'on_ft': 'python'})

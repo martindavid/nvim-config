@@ -59,6 +59,17 @@ if dein#tap('tern_for_vim')
 		\| nnoremap <silent><buffer> <leader>g  :<C-u>TernType<CR>
 		\| nnoremap <silent><buffer> <leader>n  :<C-u>TernRefs<CR>
 		\| nnoremap <silent><buffer> <leader>r  :<C-u>TernRename<CR>
+
+  let g:tern_request_timeout = 1
+  let g:tern_request_timeout = 6000
+  let g:tern#command = ["tern"]
+  let g:tern#arguments = ["--persistent"]
+endif
+
+if dein#tap('vim-prettier')
+	nmap <Leader>py :Prettier<CR>
+	let g:prettier#autoformat = 0
+	autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html Prettier
 endif
 
 if dein#tap('emmet-vim')
@@ -136,7 +147,13 @@ let g:delimitMate_excluded_ft = 'html'
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_use_caching = 0
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 let g:javascript_plugin_jsdoc = 1 
 let g:javascript_plugin_flow = 1
 highlight! link jsFutureKeys PreProc
+
+let g:sneak#label = 1
+nmap f <Plug>Sneak_s
+nmap F <Plug>Sneak_S
