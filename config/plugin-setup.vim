@@ -1,38 +1,35 @@
-
-
 if dein#tap('denite.nvim')
-	nnoremap <silent><LocalLeader>r :<C-u>Denite -resume -refresh<CR>
+  nnoremap <silent><LocalLeader>r :<C-u>Denite -resume -refresh -no-start-filter<CR>
 	nnoremap <silent><LocalLeader>f :<C-u>Denite file/rec<CR>
 	nnoremap <silent><LocalLeader>b :<C-u>Denite buffer file/old -default-action=switch<CR>
 	nnoremap <silent><LocalLeader>d :<C-u>Denite directory_rec -default-action=cd<CR>
-	nnoremap <silent><LocalLeader>v :<C-u>Denite register -buffer-name=register<CR>
-	xnoremap <silent><LocalLeader>v :<C-u>Denite register -buffer-name=register -default-action=replace<CR>
+	nnoremap <silent><LocalLeader>v :<C-u>Denite neoyank -buffer-name=register<CR>
+	xnoremap <silent><LocalLeader>v :<C-u>Denite neoyank -buffer-name=register -default-action=replace<CR>
 	nnoremap <silent><LocalLeader>l :<C-u>Denite location_list -buffer-name=list<CR>
 	nnoremap <silent><LocalLeader>q :<C-u>Denite quickfix -buffer-name=list<CR>
 	nnoremap <silent><LocalLeader>n :<C-u>Denite dein<CR>
-	nnoremap <silent><LocalLeader>g :<C-u>Denite grep<CR>
-	nnoremap <silent><LocalLeader>j :<C-u>Denite jump change file/point<CR>
+	nnoremap <silent><LocalLeader>g :<C-u>Denite grep -buffer-name=search<CR>
+	nnoremap <silent><LocalLeader>j :<C-u>Denite jump change file/point -buffer-name=jump<CR>
 	nnoremap <silent><LocalLeader>u :<C-u>Denite junkfile:new junkfile<CR>
 	nnoremap <silent><LocalLeader>o :<C-u>Denite outline<CR>
 	nnoremap <silent><LocalLeader>s :<C-u>Denite session -buffer-name=list<CR>
-	nnoremap <silent><expr> <LocalLeader>t &filetype == 'help' ? "g\<C-]>" :
-		\ ":\<C-u>DeniteCursorWord -buffer-name=tag
-		\  tag:include\<CR>"
-	nnoremap <silent><expr> <LocalLeader>p  &filetype == 'help' ?
-		\ ":\<C-u>pop\<CR>" : ":\<C-u>Denite -mode=normal jump\<CR>"
+	nnoremap <silent><LocalLeader>t :<C-u>Denite -buffer-name=tag tag:include<CR>
+	nnoremap <silent><LocalLeader>p :<C-u>Denite jump -buffer-name=jump<CR>
 	nnoremap <silent><LocalLeader>h :<C-u>Denite help<CR>
-	nnoremap <silent><LocalLeader>m :<C-u>Denite mpc -buffer-name=mpc<CR>
-	nnoremap <silent><LocalLeader>/ :<C-u>Denite line<CR>
-	nnoremap <silent><LocalLeader>* :<C-u>DeniteCursorWord line<CR>
+	nnoremap <silent><LocalLeader>m :<C-u>Denite file/rec -buffer-name=memo -path=~/docs/books<CR>
 	nnoremap <silent><LocalLeader>z :<C-u>Denite z<CR>
+	nnoremap <silent><LocalLeader>/ :<C-u>Denite line -start-filter<CR>
+	nnoremap <silent><LocalLeader>* :<C-u>DeniteCursorWord line<CR>
 	nnoremap <silent><LocalLeader>; :<C-u>Denite command command_history<CR>
 
+
 	" Open Denite with word under cursor or selection
+	nnoremap <silent> <Leader>gt :DeniteCursorWord tag:include -buffer-name=tag -immediately<CR>
 	nnoremap <silent> <Leader>gf :DeniteCursorWord file/rec<CR>
-	nnoremap <silent> <Leader>gg :DeniteCursorWord grep<CR>
+	nnoremap <silent> <Leader>gg :DeniteCursorWord grep -buffer-name=search<CR>
 	vnoremap <silent> <Leader>gg
 		\ :<C-u>call <SID>get_selection('/')<CR>
-		\ :execute 'Denite grep:::'.@/<CR><CR>
+		\ :execute 'Denite -buffer-name=search grep:::'.@/<CR><CR>
 
 	function! s:get_selection(cmdtype)
 		let temp = @s
@@ -50,6 +47,13 @@ if dein#tap('jedi-vim')
 	let g:jedi#rename_command = '<Leader>r'
 	let g:jedi#usages_command = '<Leader>n'
 	let g:jedi#use_splits_not_buffers = 'right'
+endif
+
+if dein#tap('nerdtree')
+  let g:NERDTreeShowHidden=1
+  let g:NERDTreeQuitOnOpen=1
+  map <leader>nn :NERDTree<CR>
+  map <F2> :NERDTreeToggle<CR>
 endif
 
 if dein#tap('tern_for_vim')
@@ -82,6 +86,19 @@ if dein#tap('emmet-vim')
 		\ | imap <buffer> <C-Return> <Plug>(emmet-expand-abbr)
 endif
 
+if dein#tap('vim-easymotion')
+	nmap ss <Plug>(easymotion-s2)
+	nmap sd <Plug>(easymotion-s)
+	nmap sf <Plug>(easymotion-overwin-f)
+	map  sh <Plug>(easymotion-linebackward)
+	map  sl <Plug>(easymotion-lineforward)
+	" map  sj <Plug>(easymotion-j)
+	" map  sk <Plug>(easymotion-k)
+	map  s/ <Plug>(easymotion-sn)
+	omap s/ <Plug>(easymotion-tn)
+	map  sn <Plug>(easymotion-next)
+	map  sp <Plug>(easymotion-prev)
+endif
 
 let g:lint_filetypes = ['yaml.ansible', 'python', 'php', 'ruby', 'vim', 'go', 'sh', 'javascript', 'jsx', 'javascript.jsx', 'json', 'css', 'markdown', 'html', 'yaml']
 autocmd BufWritePost *
@@ -91,11 +108,12 @@ autocmd BufWritePost *
 	\|   Neomake tidy
 	\| endif
 
-
-let g:jedi#completions_enabled = 0
-let g:jedi#auto_vim_configuration = 0
-let g:jedi#smart_auto_mappings = 0
-let g:jedi#show_call_signatures = 1
+if dein#tap('jedi-vim')
+  let g:jedi#completions_enabled = 0
+  let g:jedi#auto_vim_configuration = 0
+  let g:jedi#smart_auto_mappings = 0
+  let g:jedi#show_call_signatures = 1
+endif
 
 let g:gutentags_generate_on_write = 1
 let g:gutentags_generate_on_missing = 0

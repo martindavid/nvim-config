@@ -10,14 +10,6 @@ noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 
-" NERDTree
-
-let NERDTreeIgnore=['\.pyc$', '\~$', '.DS_Store'] "ignore files in NERDTree"
-let NERDTreeShowHidden=1
-let NERDTreeQuitOnOpen = 1
-map <leader>nn :NERDTree<CR>
-map <F2> :NERDTreeToggle<CR>
-
 " I like to :quit with 'q', shrug.
 nnoremap <silent> q :<C-u>:quit<CR>
 autocmd FileType man nnoremap <silent><buffer> q :<C-u>:quit<CR>
