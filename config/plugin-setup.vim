@@ -52,7 +52,7 @@ endif
 if dein#tap('nerdtree')
   let g:NERDTreeShowHidden=1
   let g:NERDTreeQuitOnOpen=1
-  map <leader>nn :NERDTree<CR>
+  map <leader>nn :NERDTreeToggle<CR>
   map <F2> :NERDTreeToggle<CR>
 endif
 
@@ -92,8 +92,8 @@ if dein#tap('vim-easymotion')
 	nmap sf <Plug>(easymotion-overwin-f)
 	map  sh <Plug>(easymotion-linebackward)
 	map  sl <Plug>(easymotion-lineforward)
-	" map  sj <Plug>(easymotion-j)
-	" map  sk <Plug>(easymotion-k)
+	map  sj <Plug>(easymotion-j)
+	map  sk <Plug>(easymotion-k)
 	map  s/ <Plug>(easymotion-sn)
 	omap s/ <Plug>(easymotion-tn)
 	map  sn <Plug>(easymotion-next)

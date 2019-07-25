@@ -42,6 +42,7 @@ if dein#load_state('~/.cache/dein')
 	call dein#add('tmhedberg/SimpylFold', {'on_ft': 'python'})
 	call dein#add('davidhalter/jedi-vim', {'on_ft': 'python' })
   call dein#add('nvie/vim-flake8', { 'on_ft': 'python' })
+	call dein#add('google/yapf', { 'on_ft': 'python' })
 
 	
 	call dein#add('ludovicchabant/vim-gutentags', { 'if': "executable('ctags')", 'on_path': '.*', 'hook_add': 'source $VIMPATH/plugins/gutentags.vim' })

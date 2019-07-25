@@ -145,5 +145,7 @@ let g:php_phpdoc_folding = 1
 let g:perl_fold = 1
 " }}}
 " }}}
+"
+autocmd BufWritePost *.py call flake8#Flake8()
 
 " vim: set foldmethod=marker ts=2 sw=2 tw=80 noet :

@@ -9,9 +9,11 @@
     "typescript",
     "typescriptreact",
     "json",
-    "javascriptreact"
+    "javascriptreact",
+		"python"
   ],
   "diagnostic.errorSign": "•",
   "diagnostic.warningSign": "•",
-  "diagnostic.infoSign": "•"
+  "diagnostic.infoSign": "•",
+  "python.jediEnabled": true
 }

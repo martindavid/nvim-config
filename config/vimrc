@@ -50,8 +50,6 @@ call s:source_file('plugins.vim')
 call s:source_file('plugin-setup.vim')
 
 
-filetype plugin indent on
-syntax enable
 
 " if ! has('vim_starting')
 	call dein#call_hook('source')
