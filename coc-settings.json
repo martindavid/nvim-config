@@ -10,10 +10,25 @@
     "typescriptreact",
     "json",
     "javascriptreact",
-		"python"
+    "python"
   ],
   "diagnostic.errorSign": "•",
   "diagnostic.warningSign": "•",
   "diagnostic.infoSign": "•",
-  "python.jediEnabled": true
+  "python.jediEnabled": false,
+  "solargraph.useBundler": true,
+  "languageserver": {
+    "elmLS": {
+      "command": "elm-language-server",
+      "args": ["--stdio"],
+      "filetypes": ["elm"],
+      "rootPatterns": ["elm.json"],
+      "initializationOptions": {
+        "runtime": "node",
+        "elmPath": "elm",
+        "elmFormatPath": "elm-format",
+        "elmTestPath": "elm-test"
+      }
+    }
+  }
 }

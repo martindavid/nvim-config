@@ -24,9 +24,9 @@ if dein#tap('denite.nvim')
 
 
 	" Open Denite with word under cursor or selection
-	nnoremap <silent> <Leader>gt :DeniteCursorWord tag:include -buffer-name=tag -immediately<CR>
-	nnoremap <silent> <Leader>gf :DeniteCursorWord file/rec<CR>
-	nnoremap <silent> <Leader>gg :DeniteCursorWord grep -buffer-name=search<CR>
+	"nnoremap <silent> <Leader>gt :DeniteCursorWord tag:include -buffer-name=tag -immediately<CR>
+	"nnoremap <silent> <Leader>gf :DeniteCursorWord file/rec<CR>
+	"nnoremap <silent> <Leader>gg :DeniteCursorWord grep -buffer-name=search<CR>
 	vnoremap <silent> <Leader>gg
 		\ :<C-u>call <SID>get_selection('/')<CR>
 		\ :execute 'Denite -buffer-name=search grep:::'.@/<CR><CR>
@@ -39,7 +39,18 @@ if dein#tap('denite.nvim')
 	endfunction "}}}
 endif
 
+
+let g:grepper = {}
+let g:grepper.tools = ["rg"]
+let g:grepper.jump = 1
+nnoremap <Leader>g :GrepperRg<Space>
+map gf :Grepper -cword -noprompt<CR>
+
 if dein#tap('jedi-vim')
+  let g:jedi#completions_enabled = 0
+  let g:jedi#auto_vim_configuration = 0
+  let g:jedi#smart_auto_mappings = 0
+  let g:jedi#show_call_signatures = 1
 	let g:jedi#completions_command = ''
 	let g:jedi#documentation_command = 'K'
 	let g:jedi#goto_command = '<Leader>d'
@@ -51,15 +62,15 @@ endif
 
 if dein#tap('nerdtree')
   let g:NERDTreeShowHidden=1
-  let g:NERDTreeQuitOnOpen=1
   map <leader>nn :NERDTreeToggle<CR>
   map <F2> :NERDTreeToggle<CR>
+	map <Leader>ff :NERDTreeFind<CR>
 endif
 
 if dein#tap('tern_for_vim')
 	autocmd FileType javascript,jsx,javascript.jsx
 		\  nnoremap <silent><buffer> K          :<C-u>TernDoc<CR>
-		\| nnoremap <silent><buffer> <leader>d      :<C-u>TernDefSplit<CR>
+		\| nnoremap <silent><buffer> <leader>d  :<C-u>TernDefSplit<CR>
 		\| nnoremap <silent><buffer> <leader>g  :<C-u>TernType<CR>
 		\| nnoremap <silent><buffer> <leader>n  :<C-u>TernRefs<CR>
 		\| nnoremap <silent><buffer> <leader>r  :<C-u>TernRename<CR>
@@ -107,13 +118,6 @@ autocmd BufWritePost *
 	\| elseif &filetype =~ 'html'
 	\|   Neomake tidy
 	\| endif
-
-if dein#tap('jedi-vim')
-  let g:jedi#completions_enabled = 0
-  let g:jedi#auto_vim_configuration = 0
-  let g:jedi#smart_auto_mappings = 0
-  let g:jedi#show_call_signatures = 1
-endif
 
 let g:gutentags_generate_on_write = 1
 let g:gutentags_generate_on_missing = 0
