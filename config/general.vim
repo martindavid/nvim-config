@@ -5,7 +5,7 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-colorscheme gruvbox
+colorscheme onedark
 set background=dark
 
 filetype plugin indent on

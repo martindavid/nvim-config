@@ -44,7 +44,7 @@ let g:grepper = {}
 let g:grepper.tools = ["rg"]
 let g:grepper.jump = 1
 nnoremap <Leader>g :GrepperRg<Space>
-map gf :Grepper -cword -noprompt<CR>
+" map gf :Grepper -cword -noprompt<CR>
 
 if dein#tap('jedi-vim')
   let g:jedi#completions_enabled = 0
@@ -54,7 +54,7 @@ if dein#tap('jedi-vim')
 	let g:jedi#completions_command = ''
 	let g:jedi#documentation_command = 'K'
 	let g:jedi#goto_command = '<Leader>d'
-	let g:jedi#goto_assignments_command = '<Leader>g'
+	let g:jedi#goto_assignments_command = '<Leader>ga'
 	let g:jedi#rename_command = '<Leader>r'
 	let g:jedi#usages_command = '<Leader>n'
 	let g:jedi#use_splits_not_buffers = 'right'

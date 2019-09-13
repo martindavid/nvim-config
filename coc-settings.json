@@ -1,4 +1,11 @@
 {
+  "coc.preferences.rootPatterns": [
+    ".vim",
+    ".git",
+    ".hg",
+    ".projections.json",
+    "api/project"
+  ],
   "tsserver.enable": true,
   "tslint.autoFixOnSave": true,
   "tslint.jsEnable": true,
@@ -15,8 +22,11 @@
   "diagnostic.errorSign": "•",
   "diagnostic.warningSign": "•",
   "diagnostic.infoSign": "•",
+  "solargraph.useBundler": false,
+  "solargraph.definitions": true,
+  "solargraph.references": true,
   "python.jediEnabled": false,
-  "solargraph.useBundler": true,
+  "python.venvPath": "~/.virtualenvs",
   "languageserver": {
     "elmLS": {
       "command": "elm-language-server",
@@ -30,5 +40,6 @@
         "elmTestPath": "elm-test"
       }
     }
-  }
+  },
+  "codeLens.enable": true
 }

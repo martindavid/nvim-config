@@ -34,9 +34,11 @@ if dein#load_state('~/.cache/dein')
 	call dein#add('moll/vim-node', {'on_ft': [ 'javascript', 'jsx', 'javascript.jsx' ]})
 	call dein#add('elzr/vim-json', {'on_ft': 'json'})
 	call dein#add('mxw/vim-jsx', { 'on_ft': [ 'jsx', 'javascript.jsx' ]})
-  call dein#add('mhartington/nvim-typescript', {'build': './install.sh'})
 	call dein#add('prettier/vim-prettier', { 'build': 'npm install', 'on_ft': ['javascript', 'jsx', 'javascript.jsx', 'typescript' ] })
-	call dein#add('mattn/emmet-vim', { 'on_i': 1, 'on_ft': [ 'html', 'css', 'jsx', 'javascript', 'javascript.jsx'] })
+	call dein#add('HerringtonDarkholme/yats.vim')
+	call dein#add('mattn/emmet-vim', { 'on_i': 1, 'on_ft': [ 'html', 'css', 'jsx', 'javascript', 'javascript.jsx', 'typescript'] })
+	" call dein#add('mhartington/nvim-typescript', {'build': './install.sh'})
+
 
 	" Python
 	call dein#add('tmhedberg/SimpylFold', {'on_ft': 'python'})
@@ -44,6 +46,10 @@ if dein#load_state('~/.cache/dein')
   call dein#add('nvie/vim-flake8', { 'on_ft': 'python' })
 	call dein#add('google/yapf', { 'on_ft': 'python' })
 
+	" Ruby / Rails
+	call dein#add('tpope/vim-rails', {'on_ft': 'ruby'})
+	
+	call dein#add('tpope/vim-fugitive')
 	
 	call dein#add('ludovicchabant/vim-gutentags', { 'if': "executable('ctags')", 'on_path': '.*', 'hook_add': 'source $VIMPATH/plugins/gutentags.vim' })
 	call dein#add('neomake/neomake')
