@@ -26,9 +26,10 @@ if dein#load_state('~/.cache/dein')
 
 
 	" Javascript
-	call dein#add('prettier/vim-prettier', { 'build': 'npm install', 'on_ft': ['javascript', 'jsx', 'javascript.jsx', 'typescript' ] })
-	call dein#add('HerringtonDarkholme/yats.vim', { 'on_ft': 'typescript'})
-	call dein#add('mattn/emmet-vim', { 'on_i': 1, 'on_ft': [ 'html', 'css', 'jsx', 'javascript', 'javascript.jsx', 'typescript'] })
+	call dein#add('prettier/vim-prettier', { 'build': 'npm install', 'on_ft': ['javascript', 'jsx', 'javascript.jsx', 'typescript', 'typescript.tsx' ] })
+	call dein#add('HerringtonDarkholme/yats.vim')
+	call dein#add('MaxMEllon/vim-jsx-pretty')
+	call dein#add('mattn/emmet-vim', { 'on_i': 1, 'on_ft': [ 'html', 'css', 'jsx', 'javascript', 'javascript.jsx', 'typescript', 'typescript.tsx'] })
 
 	" Python
 	call dein#add('tmhedberg/SimpylFold', {'on_ft': 'python'})
