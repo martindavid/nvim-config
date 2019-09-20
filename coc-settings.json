@@ -6,9 +6,10 @@
     ".projections.json",
     "api/project"
   ],
+  "prettier.eslintIntegration": true,
   "tsserver.enable": true,
   "tslint.autoFixOnSave": true,
-  "tslint.jsEnable": true,
+  "tslint.jsEnable": false,
   "suggest.echodocSupport": true,
   "suggest.maxCompleteItemCount": 20,
   "coc.preferences.formatOnSaveFiletypes": [

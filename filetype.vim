@@ -14,7 +14,6 @@ augroup filetypedetect
 	autocmd BufNewFile,BufRead yarn.lock            setfiletype yaml
 	autocmd BufNewFile,BufRead */.kube/config       setfiletype yaml
 	autocmd BufNewFile,BufRead *.postman_collection setfiletype json
-	autocmd BufNewFile,BufRead .tern-{project,port} setfiletype json
 	autocmd BufNewFile,BufRead *.lock               setfiletype json
 	autocmd BufNewFile,BufRead *.js.map             setfiletype json
 	autocmd BufNewFile,BufRead .jsbeautifyrc        setfiletype json

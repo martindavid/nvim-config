@@ -52,11 +52,6 @@ augroup MyAutoCmd " {{{
 
 	autocmd FileType gitcommit,qfreplace setlocal nofoldenable
 
-	" https://webpack.github.io/docs/webpack-dev-server.html#working-with-editors-ides-supporting-safe-write
-	autocmd FileType css,javascript,jsx,javascript.jsx
-		\ setlocal backupcopy=yes
-		\| setlocal equalprg=jslint
-
 	autocmd FileType zsh setlocal foldenable foldmethod=marker
 
 	autocmd FileType html
@@ -74,21 +69,11 @@ augroup MyAutoCmd " {{{
 
 	autocmd FileType cam setlocal nonumber synmaxcol=10000
 
-	" autocmd FileType go highlight default link goErr WarningMsg |
-	" 	\ match goErr /\<err\>/
-
 	autocmd FileType xml
 		\ setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
 
 augroup END " }}}
 
-" Internal Plugin Settings  {{{
-" ------------------------
-
-" PHP {{{
-let g:PHP_removeCRwhenUnix = 0
-
-" }}}
 " Python {{{
 let g:python_highlight_all = 1
 
@@ -109,11 +94,6 @@ let g:java_highlight_debug = 1
 let g:java_allow_cpp_keywords = 1
 let g:java_space_errors = 1
 let g:java_highlight_functions = 1
-
-" }}}
-" JavaScript {{{
-let g:SimpleJsIndenter_BriefMode = 1
-let g:SimpleJsIndenter_CaseIndentLevel = -1
 
 " }}}
 " Markdown {{{
@@ -146,6 +126,4 @@ let g:perl_fold = 1
 " }}}
 " }}}
 "
-autocmd BufWritePost *.py call flake8#Flake8()
-
 " vim: set foldmethod=marker ts=2 sw=2 tw=80 noet :

@@ -16,34 +16,23 @@ if dein#load_state('~/.cache/dein')
 	call dein#add('sheerun/vim-polyglot')
   call dein#add('ctrlpvim/ctrlp.vim')
 	call dein#add('Raimondi/delimitMate')
-	call dein#add('Shougo/context_filetype.vim')
 	call dein#add('mhinz/vim-signify')
-	call dein#add('wakatime/vim-wakatime')
 	call dein#add('Shougo/denite.nvim', {'on_cmd': 'Denite', 'trusted': 1, 'hook_source': 'source $VIMPATH/plugins/denite.vim'})
-	call dein#add('justinmk/vim-sneak')
+	call dein#add('wsdjeg/dein-ui.vim')
   call dein#add('easymotion/vim-easymotion')
 	call dein#add('mhinz/vim-grepper')
-
 	call dein#add('neoclide/coc.nvim', {'merge':0, 'rev': 'release', 'hook_source': 'source $VIMPATH/plugins/coc.vim'})
+	call dein#add('wakatime/vim-wakatime')
 
 
 	" Javascript
-	call dein#add('ternjs/tern_for_vim', { 'build': 'npm install', 'on_ft': ['javascript', 'jsx', 'javascript.jsx']})
-	call dein#add('pangloss/vim-javascript', { 'on_ft': [ 'javascript', 'jsx', 'javascript.jsx' ]})
-	call dein#add('othree/jspc.vim', {'on_ft': [ 'javascript', 'jsx', 'javascript.jsx' ]})
-	call dein#add('moll/vim-node', {'on_ft': [ 'javascript', 'jsx', 'javascript.jsx' ]})
-	call dein#add('elzr/vim-json', {'on_ft': 'json'})
-	call dein#add('mxw/vim-jsx', { 'on_ft': [ 'jsx', 'javascript.jsx' ]})
 	call dein#add('prettier/vim-prettier', { 'build': 'npm install', 'on_ft': ['javascript', 'jsx', 'javascript.jsx', 'typescript' ] })
-	call dein#add('HerringtonDarkholme/yats.vim')
+	call dein#add('HerringtonDarkholme/yats.vim', { 'on_ft': 'typescript'})
 	call dein#add('mattn/emmet-vim', { 'on_i': 1, 'on_ft': [ 'html', 'css', 'jsx', 'javascript', 'javascript.jsx', 'typescript'] })
-	" call dein#add('mhartington/nvim-typescript', {'build': './install.sh'})
-
 
 	" Python
 	call dein#add('tmhedberg/SimpylFold', {'on_ft': 'python'})
 	call dein#add('davidhalter/jedi-vim', {'on_ft': 'python' })
-  call dein#add('nvie/vim-flake8', { 'on_ft': 'python' })
 	call dein#add('google/yapf', { 'on_ft': 'python' })
 
 	" Ruby / Rails
@@ -58,10 +47,6 @@ if dein#load_state('~/.cache/dein')
 	call dein#end()
 	call dein#save_state()
 endif
-
-" Required:
-filetype plugin indent on
-syntax enable
 
 " If you want to install not installed plugins on startup.
 if dein#check_install()

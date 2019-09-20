@@ -14,7 +14,7 @@ syntax enable
 " }}}
 " Tabs and Indents {{{
 " ----------------
-set textwidth=100    " Text width maximum chars before wrapping
+" set textwidth=100    " Text width maximum chars before wrapping
 set noexpandtab     " Don't expand tabs to spaces.
 set tabstop=2       " The number of spaces a tab is
 set softtabstop=2   " While performing editing operations
@@ -26,13 +26,12 @@ set shiftround      " Round indent to multiple of 'shiftwidth'
 
 " UI CONFIG
 set nu		              " show line number
-set relativenumber
+set relativenumber      " use relative number, this help a lot with motion
 set showcmd		          " show command in bottom bar
 set cursorline		      " highlight current line
 set wildmenu		        " visual autocomplete for command menu
 set lazyredraw		      " redraw only when need to
 set showmatch		        " highlight matching [{()}]
-set hlsearch            " highlight search terms
 set splitbelow          " Horizontal splits open below current file
 set splitright          " Vertical splits open to the right of the current file
 set hidden
@@ -97,6 +96,3 @@ function! FoldText()
 	let expansionString = repeat('.', w - strwidth(foldSizeStr.line.foldLevelStr.foldPercentage))
 	return line . expansionString . foldSizeStr . foldPercentage . foldLevelStr
 endfunction
-
-" vim: ts=2 sw=2 sts=2 sr noet st ai si
-
