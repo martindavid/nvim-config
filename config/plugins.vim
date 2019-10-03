@@ -18,11 +18,17 @@ if dein#load_state('~/.cache/dein')
 	call dein#add('Raimondi/delimitMate')
 	call dein#add('mhinz/vim-signify')
 	call dein#add('Shougo/denite.nvim', {'on_cmd': 'Denite', 'trusted': 1, 'hook_source': 'source $VIMPATH/plugins/denite.vim'})
+	call dein#add('Shougo/deoplete.nvim')
+  call dein#add('Shougo/echodoc.vim')	
 	call dein#add('wsdjeg/dein-ui.vim')
   call dein#add('easymotion/vim-easymotion')
 	call dein#add('mhinz/vim-grepper')
-	call dein#add('neoclide/coc.nvim', {'merge':0, 'rev': 'release', 'hook_source': 'source $VIMPATH/plugins/coc.vim'})
+	" call dein#add('neoclide/coc.nvim', {'merge':0, 'rev': 'release', 'hook_source': 'source $VIMPATH/plugins/coc.vim'})
 	call dein#add('wakatime/vim-wakatime')
+	call dein#add('autozimu/LanguageClient-neovim', {
+		\ 'rev': 'next',
+		\ 'build': 'bash install.sh',
+		\ })
 
 
 	" Javascript

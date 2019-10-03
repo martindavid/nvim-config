@@ -7,11 +7,9 @@
     "api/project"
   ],
   "prettier.eslintIntegration": true,
-  "tsserver.enable": true,
-  "tslint.autoFixOnSave": true,
-  "tslint.jsEnable": false,
   "suggest.echodocSupport": true,
   "suggest.maxCompleteItemCount": 20,
+  "coc.preferences.jumpCommand": "drop",
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
     "typescript",
@@ -41,6 +39,5 @@
         "elmTestPath": "elm-test"
       }
     }
-  },
-  "codeLens.enable": true
+  }
 }

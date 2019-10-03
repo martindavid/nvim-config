@@ -41,9 +41,10 @@ endif
 
 
 let g:grepper = {}
-let g:grepper.tools = ["rg"]
+let g:grepper.tools = ["rg", "ag"]
 let g:grepper.jump = 1
-nnoremap <Leader>g :GrepperRg<Space>
+nnoremap <leader>g :Grepper -tool rg<cr>
+nnoremap <leader>G :Grepper -tool rg -buffers<cr>
 " map gf :Grepper -cword -noprompt<CR>
 
 if dein#tap('jedi-vim')
@@ -97,11 +98,53 @@ if dein#tap('vim-easymotion')
 	map  sp <Plug>(easymotion-prev)
 endif
 
+let g:deoplete#enable_at_startup = 1
+" Moving in the completion window using C-j and C-n
+inoremap <expr> <C-j> ((pumvisible())?("\<C-n>"):("C-j"))
+inoremap <expr> <C-k> ((pumvisible())?("\<C-p>"):("C-k"))
+
+if dein#tap('echodoc.vim')
+	set cmdheight=3
+	let g:echodoc#enable_at_startup = 1
+	let g:echodoc#type = 'signature'
+endif
+
+if dein#tap('LanguageClient-neovim')
+	" Disable all realtime notifications
+	let g:LanguageClient_diagnosticsSignsMax = 0
+	let g:LanguageClient_diagnosticsEnable = 1
+	let g:LanguageClient_useVirtualText = 0
+
+" Language Server settings:
+	let g:LanguageClient_serverCommands = {
+		\ 'sh': ['bash-language-server', 'start'],
+		\ 'javascript': ['typescript-language-server', '--stdio'],
+		\ 'javascript.jsx': ['typescript-language-server', '--stdio'],
+		\ 'typescript': ['typescript-language-server', '--stdio'],
+		\ 'typescript.tsx': ['typescript-language-server', '--stdio'],
+		\ 'python': ['~/.pyenv/shims/pyls'],
+		\ 'ruby': ['~/.asdf/shims/solargraph', 'stdio'],
+		\ }
+
+	nnoremap <Leader>lc   :call LanguageClient_contextMenu()<CR>
+
+	function LC_maps()
+		if has_key(g:LanguageClient_serverCommands, &filetype)
+			nnoremap <buffer> <silent> K :call LanguageClient#textDocument_hover()<cr>
+			nnoremap <buffer> <silent> gd :call LanguageClient#textDocument_definition()<CR>
+			nnoremap <buffer> <silent> gs :call LanguageClient#textDocument_documentSymbol()<CR>
+			nnoremap <buffer> <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+		endif
+	endfunction
+
+	autocmd FileType * call LC_maps()
+endif
+
 " Neomake
 " ---------
 if dein#tap('neomake')
 	call neomake#configure#automake('w')
-	let g:neomake_open_list = 2
+	let g:neomake_open_list = 0
 	let g:neomake_verbose = 1
 	let g:airline#extensions#neomake#enabled = 1
 
@@ -131,3 +174,5 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_use_caching = 0
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
+

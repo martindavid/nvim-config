@@ -50,8 +50,6 @@ function! s:show_documentation()
 	endif
 endfunction
 
-" Highlight symbol under cursor on CursorHold
-autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
@@ -102,3 +100,4 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 let g:coc_global_extensions = ['coc-solargraph']
+let g:coc_start_at_startup = 1
