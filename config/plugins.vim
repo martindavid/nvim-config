@@ -17,18 +17,19 @@ if dein#load_state('~/.cache/dein')
   call dein#add('ctrlpvim/ctrlp.vim')
 	call dein#add('Raimondi/delimitMate')
 	call dein#add('mhinz/vim-signify')
-	call dein#add('Shougo/denite.nvim', {'on_cmd': 'Denite', 'trusted': 1, 'hook_source': 'source $VIMPATH/plugins/denite.vim'})
 	call dein#add('Shougo/deoplete.nvim')
   call dein#add('Shougo/echodoc.vim')	
 	call dein#add('wsdjeg/dein-ui.vim')
   call dein#add('easymotion/vim-easymotion')
 	call dein#add('mhinz/vim-grepper')
-	" call dein#add('neoclide/coc.nvim', {'merge':0, 'rev': 'release', 'hook_source': 'source $VIMPATH/plugins/coc.vim'})
 	call dein#add('wakatime/vim-wakatime')
 	call dein#add('autozimu/LanguageClient-neovim', {
 		\ 'rev': 'next',
 		\ 'build': 'bash install.sh',
 		\ })
+	call dein#add('tpope/vim-fugitive')
+	call dein#add('ludovicchabant/vim-gutentags', { 'if': "executable('ctags')", 'on_path': '.*', 'hook_add': 'source $VIMPATH/plugins/gutentags.vim' })
+	call dein#add('neomake/neomake')
 
 
 	" Javascript
@@ -45,11 +46,6 @@ if dein#load_state('~/.cache/dein')
 	" Ruby / Rails
 	call dein#add('tpope/vim-rails', {'on_ft': 'ruby'})
 	
-	call dein#add('tpope/vim-fugitive')
-	
-	call dein#add('ludovicchabant/vim-gutentags', { 'if': "executable('ctags')", 'on_path': '.*', 'hook_add': 'source $VIMPATH/plugins/gutentags.vim' })
-	call dein#add('neomake/neomake')
-
 	" Required:
 	call dein#end()
 	call dein#save_state()
