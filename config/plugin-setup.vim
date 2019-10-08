@@ -18,6 +18,25 @@ if dein#tap('jedi-vim')
 	let g:jedi#use_splits_not_buffers = 'right'
 endif
 
+if dein#tap('sbdchd/neoformat')
+	augroup fmt
+		autocmd!
+		autocmd BufWritePre * undojoin | Neoformat
+	augroup END
+
+	let g:neoformat_python_autopep8 = {
+		\ 'exe': 'black',
+		\ 'args': ['-s 4', '-E'],
+		\ 'replace': 1 " replace the file, instead of updating buffer (default: 0),
+		\ 'stdin': 1, " send data to stdin of formatter (default: 0)
+		\ 'env': ["DEBUG=1"], " prepend environment variables to formatter command
+		\ 'valid_exit_codes': [0, 23],
+		\ 'no_append': 1,
+		\ }
+
+	let g:neoformat_enabled_python = ['black']
+endif
+
 if dein#tap('nerdtree')
   let g:NERDTreeShowHidden=1
   map <leader>nn :NERDTreeToggle<CR>
@@ -56,15 +75,28 @@ if dein#tap('vim-easymotion')
 endif
 
 let g:deoplete#enable_at_startup = 1
-" Moving in the completion window using C-j and C-n
+" Using jk and Tab to navigate around completion
 inoremap <expr> <C-j> ((pumvisible())?("\<C-n>"):("C-j"))
 inoremap <expr> <C-k> ((pumvisible())?("\<C-p>"):("C-k"))
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 if dein#tap('echodoc.vim')
 	set cmdheight=3
 	let g:echodoc#enable_at_startup = 1
 	let g:echodoc#type = 'signature'
 endif
+
+
+let g:LanguageClient_serverCommands = {
+	\ 'sh': ['bash-language-server', 'start'],
+	\ 'javascript': ['typescript-language-server', '--stdio'],
+	\ 'javascript.jsx': ['typescript-language-server', '--stdio'],
+	\ 'typescript': ['typescript-language-server', '--stdio'],
+	\ 'typescript.tsx': ['typescript-language-server', '--stdio'],
+	\ 'python': ['~/.pyenv/shims/pyls'],
+	\ 'ruby': ['~/.gem/ruby/2.6.2/bin/solargraph', 'stdio'],
+	\ }
 
 if dein#tap('LanguageClient-neovim')
 	" Disable all realtime notifications
@@ -73,15 +105,6 @@ if dein#tap('LanguageClient-neovim')
 	let g:LanguageClient_useVirtualText = 0
 
 " Language Server settings:
-	let g:LanguageClient_serverCommands = {
-		\ 'sh': ['bash-language-server', 'start'],
-		\ 'javascript': ['typescript-language-server', '--stdio'],
-		\ 'javascript.jsx': ['typescript-language-server', '--stdio'],
-		\ 'typescript': ['typescript-language-server', '--stdio'],
-		\ 'typescript.tsx': ['typescript-language-server', '--stdio'],
-		\ 'python': ['~/.pyenv/shims/pyls'],
-		\ 'ruby': ['~/.asdf/shims/solargraph', 'stdio'],
-		\ }
 
 	nnoremap <Leader>lc   :call LanguageClient_contextMenu()<CR>
 
@@ -89,6 +112,7 @@ if dein#tap('LanguageClient-neovim')
 		if has_key(g:LanguageClient_serverCommands, &filetype)
 			nnoremap <buffer> <silent> K :call LanguageClient#textDocument_hover()<cr>
 			nnoremap <buffer> <silent> gd :call LanguageClient#textDocument_definition()<CR>
+			nnoremap <buffer> <silent> gf :call LanguageClient#textDocument_definition({'gotoCmd': 'vsplit'})<CR>
 			nnoremap <buffer> <silent> gs :call LanguageClient#textDocument_documentSymbol()<CR>
 			nnoremap <buffer> <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 		endif

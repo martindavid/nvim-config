@@ -30,6 +30,7 @@ if dein#load_state('~/.cache/dein')
 	call dein#add('tpope/vim-fugitive')
 	call dein#add('ludovicchabant/vim-gutentags', { 'if': "executable('ctags')", 'on_path': '.*', 'hook_add': 'source $VIMPATH/plugins/gutentags.vim' })
 	call dein#add('neomake/neomake')
+	call dein#add('sbdchd/neoformat', { 'on_ft': 'python' })
 
 
 	" Javascript
@@ -41,7 +42,6 @@ if dein#load_state('~/.cache/dein')
 	" Python
 	call dein#add('tmhedberg/SimpylFold', {'on_ft': 'python'})
 	call dein#add('davidhalter/jedi-vim', {'on_ft': 'python' })
-	call dein#add('google/yapf', { 'on_ft': 'python' })
 
 	" Ruby / Rails
 	call dein#add('tpope/vim-rails', {'on_ft': 'ruby'})
