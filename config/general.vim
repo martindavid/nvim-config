@@ -39,8 +39,8 @@ set hidden
 set winwidth=30         " Minimum width for active window
 set winheight=1         " Minimum height for active window
 set pumheight=15        " Pop-up menu's line height
-set helpheight=12       " Minimum help window height
-set previewheight=12    " Completion preview height
+set helpheight=10       " Minimum help window height
+set previewheight=10    " Completion preview height
 
 set backspace=indent,eol,start
 

@@ -1,8 +1,9 @@
-let g:grepper = {}
-let g:grepper.tools = ["rg", "ag"]
-let g:grepper.jump = 1
 nnoremap <leader>g :Grepper -tool rg<cr>
 nnoremap <leader>G :Grepper -tool rg -buffers<cr>
+nnoremap <leader>gf :Grepper -tool ag -cword -noprompt<cr>
+let g:grepper = { 'next_tool': '<leader>g' }
+let g:grepper.tools = ["rg", "ag"]
+let g:grepper.jump = 1
 
 if dein#tap('jedi-vim')
   let g:jedi#completions_enabled = 0
@@ -18,24 +19,6 @@ if dein#tap('jedi-vim')
 	let g:jedi#use_splits_not_buffers = 'right'
 endif
 
-if dein#tap('sbdchd/neoformat')
-	augroup fmt
-		autocmd!
-		autocmd BufWritePre * undojoin | Neoformat
-	augroup END
-
-	let g:neoformat_python_autopep8 = {
-		\ 'exe': 'black',
-		\ 'args': ['-s 4', '-E'],
-		\ 'replace': 1 " replace the file, instead of updating buffer (default: 0),
-		\ 'stdin': 1, " send data to stdin of formatter (default: 0)
-		\ 'env': ["DEBUG=1"], " prepend environment variables to formatter command
-		\ 'valid_exit_codes': [0, 23],
-		\ 'no_append': 1,
-		\ }
-
-	let g:neoformat_enabled_python = ['black']
-endif
 
 if dein#tap('nerdtree')
   let g:NERDTreeShowHidden=1
@@ -82,7 +65,7 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 if dein#tap('echodoc.vim')
-	set cmdheight=3
+	set cmdheight=2
 	let g:echodoc#enable_at_startup = 1
 	let g:echodoc#type = 'signature'
 endif
@@ -101,20 +84,20 @@ let g:LanguageClient_serverCommands = {
 if dein#tap('LanguageClient-neovim')
 	" Disable all realtime notifications
 	let g:LanguageClient_diagnosticsSignsMax = 0
-	let g:LanguageClient_diagnosticsEnable = 1
+	let g:LanguageClient_diagnosticsEnable = 0
 	let g:LanguageClient_useVirtualText = 0
 
 " Language Server settings:
 
 	nnoremap <Leader>lc   :call LanguageClient_contextMenu()<CR>
 
-	function LC_maps()
+	function! LC_maps()
 		if has_key(g:LanguageClient_serverCommands, &filetype)
 			nnoremap <buffer> <silent> K :call LanguageClient#textDocument_hover()<cr>
 			nnoremap <buffer> <silent> gd :call LanguageClient#textDocument_definition()<CR>
 			nnoremap <buffer> <silent> gf :call LanguageClient#textDocument_definition({'gotoCmd': 'vsplit'})<CR>
 			nnoremap <buffer> <silent> gs :call LanguageClient#textDocument_documentSymbol()<CR>
-			nnoremap <buffer> <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+			nnoremap <buffer> <silent> gr :call LanguageClient#textDocument_rename()<CR>
 		endif
 	endfunction
 
@@ -155,3 +138,23 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_use_caching = 0
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:30,results:30'
+nnoremap <Leader>b :CtrlPBuffer<CR>
+if executable('rg')
+	set grepprg=rg\ --color=never
+	let g:ctrlp_use_caching = 0
+  let g:ctrlp_user_command = 'rg %s --files --hidden --color=never --glob ""'
+endif
+
+
+" Format on save, if desired
+augroup fmt
+  autocmd!
+  au BufWritePre * try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | finally | silent Neoformat | endtry
+augroup END
+
+let g:neoformat_enabled_python = ['autopep8', 'yapf']
+
+
+" Marked app
+let g:marked_app = "Marked"

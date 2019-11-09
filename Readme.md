@@ -1,4 +1,4 @@
-# Martin Neo/vim Config
+# Martin's Neo/vim Config
 
 This is a place where I put all of my (Neo)vim configuration. This will be a living repository as I learn more about being productive using (Neo)vim
 
@@ -34,15 +34,17 @@ All of the plugins that I use:
 | [sheerun/vim-polyglot]           | A solid language pack for Vim                                     |
 | [ctrlpvim/ctrlp.vim]             | Fuzzy file, buffer, mru, tag, etc finder                          |
 | [Raimondi/delimitMate]           | Insert mode auto-completion for quotes, parens, brackets, etc     |
-| [Shougo/context_filetype.vim]    | ntext filetype library for Vim script                             |
-| [mhinz/vim-signify]              | ➕ Show a diff using Vim its sign column.                         |
-| [Shougo/denite.nvim]             | 🐉 Dark powered asynchronous unite all interfaces for Neovim/Vim8 |
+| [mhinz/vim-signify]              | ➕ show a diff using vim its sign column.                         |
+| [Shougo/deoplete.nvim]           | 🌠 Dark powered asynchronous completion framework for neovim/Vim8 |  |
+| [Shougo/echodoc.vim]             | Print documents in echo area.                                     |
 | [wsdjeg/dein-ui.vim]             | UI for Shougo's dein.vim                                          |
 | [easymotion/vim-easymotion]      | Vim motions on speed!                                             |
 | [mhinz/vim-grepper]              | 👾 Helps you win at grep.                                         |
 | [neoclide/coc.nvim]              | Intellisense engine for vim8 & neovim, full LSP support as VSCode |
 | [wakatime/vim-wakatime]          | Vim plugin for [wakatime]                                         |
-| [tmhedberg/SimpylFold]           | No-BS Python code folding for Vim                                 |
+| [itspriddle/vim-marked]          | Open the current Markdown buffer in Marked.app                    |
+| [autozimu/LanguageClient-neovim] | Language Server Protocol (LSP) support for vim and neovim.        |
+| [tmhedberg/SimpyFold]            | No-BS Python code folding for Vim                                 |
 | [davidhalter/jedi-vim]           | Using the jedi autocompletion library for VIM.                    |
 | [mattn/emmet-vim]                | Emmet for vim                                                     |
 | [neomake/neomake]                | Asynchronous linting and make framework for Neovim/Vim            |
@@ -66,8 +68,7 @@ Credits to all of these maintainer who open-source their (Neo)vim config that I 
 [ctrlpvim/ctrlp.vim]: https://github.com/ctrlpvim/ctrlp.vim
 [raimondi/delimitmate]: https://github.com/Raimondi/delimitMate
 [mhinz/vim-signify]: https://github.com/mhinz/vim-signify
-[shougo/denite.nvim]: https://github.com/Shougo/denite.nvim
-[tmhedberg/simpylfold]: https://github.com/tmhedberg/SimpylFold
+[tmhedberg/simpyfold]: https://github.com/tmhedberg/SimpylFold
 [davidhalter/jedi-vim]: https://github.com/davidhalter/jedi-vim
 [mattn/emmet-vim]: https://github.com/mattn/emmet-vim
 [neomake/neomake]: https://github.com/neomake/neomake
@@ -79,3 +80,7 @@ Credits to all of these maintainer who open-source their (Neo)vim config that I 
 [neoclide/coc.nvim]: https://github.com/neoclide/coc-nvim
 [wakatime/vim-wakatime]: https://github.com/wakatime/vim-wakatime
 [wakatime]: https://wakatime.com/vim
+[shougo/deoplete.nvim]: (https://github.com/Shougo/deoplete.nvim)
+[shougo/echodoc.vim]: (https://github.com/Shougo/echodoc.vim)
+[itspriddle/vim-marked]: (https://github.com/itspriddle/vim-marked)
+[autozimu/languageclient-neovim]: (https://github.com/autozimu/LanguageClient-neovim)

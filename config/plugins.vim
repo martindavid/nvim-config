@@ -23,6 +23,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('easymotion/vim-easymotion')
 	call dein#add('mhinz/vim-grepper')
 	call dein#add('wakatime/vim-wakatime')
+  call dein#add('itspriddle/vim-marked')
 	call dein#add('autozimu/LanguageClient-neovim', {
 		\ 'rev': 'next',
 		\ 'build': 'bash install.sh',

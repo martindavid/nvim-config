@@ -2,7 +2,7 @@
 " NERDTree
 " --------
 let g:NERDTreeMinimalUI = 1
-let g:NERDTreeWinSize = 40
+let g:NERDTreeWinSize = 50
 let g:NERDTreeCascadeOpenSingleChildDir = 1
 let g:NERDTreeCascadeSingleChildDir = 0
 let g:NERDTreeShowHidden = 1
@@ -13,8 +13,8 @@ let g:NERDTreeHijackNetrw = 1
 let g:NERDTreeBookmarksFile = $VARPATH.'/treemarks'
 let NERDTreeIgnore = [
 	\ '\.git$', '\.hg$', '\.svn$', '\.stversions$', '\.pyc$', '\.svn$',
-	\ '\.DS_Store$', '\.sass-cache$', '__pycache__$', '\.egg-info$', '\.cache$'
-	\ ]
+	\ '\.DS_Store$', '\.sass-cache$', '__pycache__$', '\.egg-info$', '\.cache$',
+	\ '\node_modules$']
 
 autocmd MyAutoCmd FileType nerdtree call s:nerdtree_settings()
 
