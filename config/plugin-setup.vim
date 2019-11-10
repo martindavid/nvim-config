@@ -88,7 +88,6 @@ if dein#tap('LanguageClient-neovim')
 	let g:LanguageClient_useVirtualText = 0
 
 " Language Server settings:
-
 	nnoremap <Leader>lc   :call LanguageClient_contextMenu()<CR>
 
 	function! LC_maps()

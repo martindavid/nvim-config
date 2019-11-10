@@ -27,5 +27,8 @@ imap jk <Esc>
 
 
 " Buffers
-nnoremap <leader>b :ls<CR>:b<Space>
 nnoremap gb :ls<CR>:b<Space>
+nnoremap <leader>b :b <C-d>
+nnoremap <leader>bv :vert sb <C-d>
+" switches to the last buffer
+noremap <leader>q :b#<cr>
