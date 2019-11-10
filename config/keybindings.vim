@@ -32,3 +32,6 @@ nnoremap <leader>b :b <C-d>
 nnoremap <leader>bv :vert sb <C-d>
 " switches to the last buffer
 noremap <leader>q :b#<cr>
+
+" Search with grep
+nnoremap <leader>/ :Rg<space>

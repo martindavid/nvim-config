@@ -101,4 +101,36 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
+" list
+nnoremap <silent> <Leader>r  :<C-u>CocList -N mru -A<cr>
+nnoremap <silent> <space>h  :<C-u>CocList helptags<cr>
+nnoremap <silent> <space>g  :<C-u>CocList gstatus<CR>
+nnoremap <silent> <space>t  :<C-u>CocList buffers<cr>
+nnoremap <silent> <space>y  :<C-u>CocList yank<cr>
+nnoremap <silent> <space>u  :<C-u>CocList snippets<cr>
+nnoremap <silent> <space>w  :exe 'CocList -A -I --normal --input='.expand('<cword>').' words -w'<CR>
+nnoremap <silent> <space>l  :<C-u>CocList locationlist<CR>
+nnoremap <silent> <space>q  :<C-u>CocList quickfix<CR>
+nnoremap <silent> <space>r  :<C-u>CocList mru<cr>
+nnoremap <silent> <space>f  :<C-u>CocList files<cr>
+
 let g:coc_global_extensions = ['coc-solargraph']
+
+autocmd FileType python let b:coc_root_patterns = ['.git', '.env', 'api/project'] 
+
+" grep word under cursor
+command! -nargs=+ -complete=custom,s:GrepArgs Rg exe 'CocList grep '.<q-args>
+
+function! s:GrepArgs(...)
+	let list = ['-S', '-smartcase', '-i', '-ignorecase', '-w', '-word',
+		\ '-e', '-regex', '-u', '-skip-vcs-ignores', '-t', '-extension']
+	return join(list, "\n")
+endfunction
+
+" Keymapping for grep word under cursor with interactive mode
+nnoremap <silent> gf :exe 'CocList -I --input='.expand('<cword>').' grep'<CR>
+
+autocmd FileType json syntax match Comment +\/\/.\+$+
+
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"

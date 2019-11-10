@@ -14,31 +14,20 @@ if dein#load_state('~/.cache/dein')
 	call dein#add('vim-airline/vim-airline')
 	call dein#add('vim-airline/vim-airline-themes')
 	call dein#add('sheerun/vim-polyglot')
-  call dein#add('ctrlpvim/ctrlp.vim')
 	call dein#add('Raimondi/delimitMate')
 	call dein#add('mhinz/vim-signify')
-	call dein#add('Shougo/deoplete.nvim')
-  call dein#add('Shougo/echodoc.vim')	
 	call dein#add('wsdjeg/dein-ui.vim')
   call dein#add('easymotion/vim-easymotion')
 	call dein#add('mhinz/vim-grepper')
 	call dein#add('wakatime/vim-wakatime')
   call dein#add('itspriddle/vim-marked')
-	call dein#add('autozimu/LanguageClient-neovim', {
-		\ 'rev': 'next',
-		\ 'build': 'bash install.sh',
-		\ })
+	call dein#add('neoclide/coc.nvim', {'merge':0, 'rev': 'release', 'hook_source': 'source $VIMPATH/plugins/coc.vim'})
 	call dein#add('tpope/vim-fugitive')
-	call dein#add('ludovicchabant/vim-gutentags', { 'if': "executable('ctags')", 'on_path': '.*', 'hook_add': 'source $VIMPATH/plugins/gutentags.vim' })
-	call dein#add('neomake/neomake')
-	call dein#add('sbdchd/neoformat', { 'on_ft': 'python' })
-
 
 	" Javascript
 	call dein#add('prettier/vim-prettier', { 'build': 'npm install', 'on_ft': ['javascript', 'jsx', 'javascript.jsx', 'typescript', 'typescript.tsx' ] })
 	call dein#add('HerringtonDarkholme/yats.vim')
 	call dein#add('MaxMEllon/vim-jsx-pretty')
-	call dein#add('mattn/emmet-vim', { 'on_i': 1, 'on_ft': [ 'html', 'css', 'jsx', 'javascript', 'javascript.jsx', 'typescript', 'typescript.tsx'] })
 
 	" Python
 	call dein#add('tmhedberg/SimpylFold', {'on_ft': 'python'})
@@ -46,7 +35,7 @@ if dein#load_state('~/.cache/dein')
 
 	" Ruby / Rails
 	call dein#add('tpope/vim-rails', {'on_ft': 'ruby'})
-	
+
 	" Required:
 	call dein#end()
 	call dein#save_state()

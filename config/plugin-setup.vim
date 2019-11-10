@@ -1,6 +1,5 @@
 nnoremap <leader>g :Grepper -tool rg<cr>
 nnoremap <leader>G :Grepper -tool rg -buffers<cr>
-nnoremap <leader>gf :Grepper -tool ag -cword -noprompt<cr>
 let g:grepper = { 'next_tool': '<leader>g' }
 let g:grepper.tools = ["rg", "ag"]
 let g:grepper.jump = 1
@@ -25,6 +24,9 @@ if dein#tap('nerdtree')
   map <leader>nn :NERDTreeToggle<CR>
   map <F2> :NERDTreeToggle<CR>
 	map <Leader>ff :NERDTreeFind<CR>
+endif
+
+if dein#tap('coc.nvim')
 endif
 
 if dein#tap('vim-prettier')
@@ -57,102 +59,12 @@ if dein#tap('vim-easymotion')
 	map  sp <Plug>(easymotion-prev)
 endif
 
-let g:deoplete#enable_at_startup = 1
-" Using jk and Tab to navigate around completion
-inoremap <expr> <C-j> ((pumvisible())?("\<C-n>"):("C-j"))
-inoremap <expr> <C-k> ((pumvisible())?("\<C-p>"):("C-k"))
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-if dein#tap('echodoc.vim')
-	set cmdheight=2
-	let g:echodoc#enable_at_startup = 1
-	let g:echodoc#type = 'signature'
-endif
-
-
-let g:LanguageClient_serverCommands = {
-	\ 'sh': ['bash-language-server', 'start'],
-	\ 'javascript': ['typescript-language-server', '--stdio'],
-	\ 'javascript.jsx': ['typescript-language-server', '--stdio'],
-	\ 'typescript': ['typescript-language-server', '--stdio'],
-	\ 'typescript.tsx': ['typescript-language-server', '--stdio'],
-	\ 'python': ['~/.pyenv/shims/pyls'],
-	\ 'ruby': ['~/.gem/ruby/2.6.2/bin/solargraph', 'stdio'],
-	\ }
-
-if dein#tap('LanguageClient-neovim')
-	" Disable all realtime notifications
-	let g:LanguageClient_diagnosticsSignsMax = 0
-	let g:LanguageClient_diagnosticsEnable = 0
-	let g:LanguageClient_useVirtualText = 0
-
-" Language Server settings:
-	nnoremap <Leader>lc   :call LanguageClient_contextMenu()<CR>
-
-	function! LC_maps()
-		if has_key(g:LanguageClient_serverCommands, &filetype)
-			nnoremap <buffer> <silent> K :call LanguageClient#textDocument_hover()<cr>
-			nnoremap <buffer> <silent> gd :call LanguageClient#textDocument_definition()<CR>
-			nnoremap <buffer> <silent> gf :call LanguageClient#textDocument_definition({'gotoCmd': 'vsplit'})<CR>
-			nnoremap <buffer> <silent> gs :call LanguageClient#textDocument_documentSymbol()<CR>
-			nnoremap <buffer> <silent> gr :call LanguageClient#textDocument_rename()<CR>
-		endif
-	endfunction
-
-	autocmd FileType * call LC_maps()
-endif
-
-" Neomake
-" ---------
-if dein#tap('neomake')
-	call neomake#configure#automake('w')
-	let g:neomake_open_list = 0
-	let g:neomake_verbose = 1
-	let g:airline#extensions#neomake#enabled = 1
-
-	if ! empty(g:python3_host_prog)
-		let g:neomake_python_python_exe = g:python3_host_prog
-	endif
-
-	let g:neomake_python_enabled_makers = ['pylama']
-	let g:neomake_jsx_enabled_makers = ['eslint']
-	let g:neomake_javascript_enabled_makers = ['eslint']
-	let g:neomake_javascript_eslint_exe = $PWD . '/node_modules/.bin/eslint'
-
-	nmap <Leader><Space>o :lopen<CR>      " open location window
-	nmap <Leader><Space>c :lclose<CR>     " close location window
-	nmap <Leader><Space>, :ll<CR>         " go to current error/warning
-	nmap <Leader><Space>n :lnext<CR>      " next error/warning
-	nmap <Leader><Space>p :lprev<CR>      " previous error/warning
-endif
-
-
 let g:delimitMate_expand_cr = 1
 let g:delimitMate_excluded_ft = 'html'
 
-" Custom ignore for ctrl-p
-let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_use_caching = 0
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:30,results:30'
-nnoremap <Leader>b :CtrlPBuffer<CR>
 if executable('rg')
 	set grepprg=rg\ --color=never
-	let g:ctrlp_use_caching = 0
-  let g:ctrlp_user_command = 'rg %s --files --hidden --color=never --glob ""'
 endif
-
-
-" Format on save, if desired
-augroup fmt
-  autocmd!
-  au BufWritePre * try | undojoin | Neoformat | catch /^Vim\%((\a\+)\)\=:E790/ | finally | silent Neoformat | endtry
-augroup END
-
-let g:neoformat_enabled_python = ['autopep8', 'yapf']
 
 
 " Marked app

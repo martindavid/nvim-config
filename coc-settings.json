@@ -9,7 +9,7 @@
   "prettier.eslintIntegration": true,
   "tsserver.enable": true,
   "tslint.autoFixOnSave": true,
-  "tslint.jsEnable": false,
+  "tslint.jsEnable": true,
   "suggest.echodocSupport": true,
   "suggest.maxCompleteItemCount": 20,
   "coc.preferences.formatOnSaveFiletypes": [
@@ -26,8 +26,19 @@
   "solargraph.useBundler": false,
   "solargraph.definitions": true,
   "solargraph.references": true,
-  "python.jediEnabled": false,
-  "python.venvPath": "~/.virtualenvs",
+  "python.jediEnabled": true,
+  "python.venvPath": "~/.pyenv",
+  "list.maxHeight": 20,
+  "list.normalMappings": {
+    "t": "action:tabe",
+    "<C-v>": "action:vsplit",
+    "<C-s>": "action:split",
+    "d": "expr:GetDeleteAction"
+  },
+  "list.insertMappings": {
+    "<C-t>": "action:tabe",
+    "<C-w>": "command:wincmd k"
+  },
   "languageserver": {
     "elmLS": {
       "command": "elm-language-server",
