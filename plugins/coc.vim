@@ -1,4 +1,6 @@
 " for COC
+let g:coc_start_at_startup = 1
+
 set cmdheight=2
 " You will have bad experience for diagnostic messages when it's default 4000.
 set updatetime=300
@@ -16,6 +18,9 @@ inoremap <silent><expr> <TAB>
 			\ <SID>check_back_space() ? "\<TAB>" :
 			\ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 function! s:check_back_space() abort
 	let col = col('.') - 1
@@ -58,11 +63,9 @@ nmap <leader>rn <Plug>(coc-rename)
 
 " Remap for format selected region
 xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
 
 " Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
 xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 " Remap for do codeAction of current line
 nmap <leader>ac  <Plug>(coc-codeaction)
@@ -82,6 +85,7 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+let g:airline#extensions#coc#enabled = 1
 
 " Using CocList
 " Show all diagnostics
@@ -105,18 +109,16 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 nnoremap <silent> <Leader>r  :<C-u>CocList -N mru -A<cr>
 nnoremap <silent> <space>h  :<C-u>CocList helptags<cr>
 nnoremap <silent> <space>g  :<C-u>CocList gstatus<CR>
-nnoremap <silent> <space>t  :<C-u>CocList buffers<cr>
 nnoremap <silent> <space>y  :<C-u>CocList yank<cr>
 nnoremap <silent> <space>u  :<C-u>CocList snippets<cr>
 nnoremap <silent> <space>w  :exe 'CocList -A -I --normal --input='.expand('<cword>').' words -w'<CR>
 nnoremap <silent> <space>l  :<C-u>CocList locationlist<CR>
 nnoremap <silent> <space>q  :<C-u>CocList quickfix<CR>
 nnoremap <silent> <space>r  :<C-u>CocList mru<cr>
+nnoremap <silent> <space>b  :<C-u>CocList buffers<cr>
 nnoremap <silent> <space>f  :<C-u>CocList files<cr>
 
-let g:coc_global_extensions = ['coc-solargraph']
-
-autocmd FileType python let b:coc_root_patterns = ['.git', '.env', 'api/project'] 
+let g:coc_global_extensions = ['coc-tslint-plugin','coc-lists', 'coc-eslint','coc-json', 'coc-css', 'coc-html', 'coc-python','coc-tsserver','coc-solargraph']
 
 " grep word under cursor
 command! -nargs=+ -complete=custom,s:GrepArgs Rg exe 'CocList grep '.<q-args>
@@ -132,5 +134,6 @@ nnoremap <silent> gf :exe 'CocList -I --input='.expand('<cword>').' grep'<CR>
 
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" Temporary solution until I can figure out why coc breaks on murmur
+nnoremap <silent> <space><space>  :<C-u>CocStart<cr>

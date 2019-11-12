@@ -96,3 +96,6 @@ function! FoldText()
 	let expansionString = repeat('.', w - strwidth(foldSizeStr.line.foldLevelStr.foldPercentage))
 	return line . expansionString . foldSizeStr . foldPercentage . foldLevelStr
 endfunction
+
+
+hi CursorLine guibg=#4b5057 ctermbg=236 gui=NONE cterm=NONE

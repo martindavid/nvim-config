@@ -1,15 +1,6 @@
 {
-  "coc.preferences.rootPatterns": [
-    ".vim",
-    ".git",
-    ".hg",
-    ".projections.json",
-    "api/project"
-  ],
-  "prettier.eslintIntegration": true,
+  "coc.preferences.rootPatterns": [".vim", ".git", ".hg", ".projections.json"],
   "tsserver.enable": true,
-  "tslint.autoFixOnSave": true,
-  "tslint.jsEnable": true,
   "suggest.echodocSupport": true,
   "suggest.maxCompleteItemCount": 20,
   "coc.preferences.formatOnSaveFiletypes": [
@@ -37,19 +28,19 @@
   },
   "list.insertMappings": {
     "<C-t>": "action:tabe",
-    "<C-w>": "command:wincmd k"
+    "<C-w>": "command:wincmd k",
+    "<C-v>": "action:vsplit"
   },
   "languageserver": {
     "elmLS": {
       "command": "elm-language-server",
-      "args": ["--stdio"],
       "filetypes": ["elm"],
       "rootPatterns": ["elm.json"],
       "initializationOptions": {
-        "runtime": "node",
-        "elmPath": "elm",
-        "elmFormatPath": "elm-format",
-        "elmTestPath": "elm-test"
+        "elmPath": "elm", // optional
+        "elmFormatPath": "elm-format", // optional
+        "elmTestPath": "elm-test", // optional
+        "elmAnalyseTrigger": "change" // optional
       }
     }
   }
