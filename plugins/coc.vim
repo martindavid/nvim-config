@@ -55,9 +55,6 @@ function! s:show_documentation()
 	endif
 endfunction
 
-" Highlight symbol under cursor on CursorHold
-autocmd CursorHold * silent call CocActionAsync('highlight')
-
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
 
@@ -118,7 +115,7 @@ nnoremap <silent> <space>r  :<C-u>CocList mru<cr>
 nnoremap <silent> <space>b  :<C-u>CocList buffers<cr>
 nnoremap <silent> <space>f  :<C-u>CocList files<cr>
 
-let g:coc_global_extensions = ['coc-tslint-plugin','coc-lists', 'coc-eslint','coc-json', 'coc-css', 'coc-html', 'coc-python','coc-tsserver','coc-solargraph']
+let g:coc_global_extensions = ['coc-lists','coc-json', 'coc-css', 'coc-html', 'coc-python','coc-tsserver','coc-solargraph']
 
 " grep word under cursor
 command! -nargs=+ -complete=custom,s:GrepArgs Rg exe 'CocList grep '.<q-args>

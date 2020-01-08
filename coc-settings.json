@@ -1,24 +1,22 @@
 {
   "coc.preferences.rootPatterns": [".vim", ".git", ".hg", ".projections.json"],
+  "coc.preferences.formatOnSaveFiletypes": ["python", "ruby"],
   "tsserver.enable": true,
+  "eslint.run": "onSave",
   "suggest.echodocSupport": true,
   "suggest.maxCompleteItemCount": 20,
-  "coc.preferences.formatOnSaveFiletypes": [
-    "javascript",
-    "typescript",
-    "typescriptreact",
-    "json",
-    "javascriptreact",
-    "python"
-  ],
   "diagnostic.errorSign": "•",
   "diagnostic.warningSign": "•",
   "diagnostic.infoSign": "•",
   "solargraph.useBundler": false,
   "solargraph.definitions": true,
+  "solargraph.autoformat": true,
+  "solargraph.formatting": true,
+  "solargraph.diagnostics": true,
   "solargraph.references": true,
   "python.jediEnabled": true,
   "python.venvPath": "~/.pyenv",
+  "python.formatting.provider": "yapf",
   "list.maxHeight": 20,
   "list.normalMappings": {
     "t": "action:tabe",
@@ -31,6 +29,7 @@
     "<C-w>": "command:wincmd k",
     "<C-v>": "action:vsplit"
   },
+  "list.source.files.args": ["--hidden", "--files"],
   "languageserver": {
     "elmLS": {
       "command": "elm-language-server",
