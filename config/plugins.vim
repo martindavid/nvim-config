@@ -36,6 +36,9 @@ if dein#load_state('~/.cache/dein')
 	" Ruby / Rails
 	call dein#add('tpope/vim-rails', {'on_ft': 'ruby'})
 
+	" Go
+	call dein#add('fatih/vim-go', {'on_ft': 'go'})
+
 	" Required:
 	call dein#end()
 	call dein#save_state()
