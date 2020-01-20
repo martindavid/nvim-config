@@ -37,7 +37,7 @@ if dein#load_state('~/.cache/dein')
 	call dein#add('tpope/vim-rails', {'on_ft': 'ruby'})
 
 	" Go
-	call dein#add('fatih/vim-go', {'on_ft': 'go'})
+	call dein#add('fatih/vim-go', {'on_ft': 'go', 'hook_source': 'source $VIMPATH/plugins/vim-go.vim'})
 
 	" Required:
 	call dein#end()
