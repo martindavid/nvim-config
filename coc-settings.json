@@ -14,7 +14,7 @@
   "solargraph.formatting": true,
   "solargraph.diagnostics": true,
   "solargraph.references": true,
-  "python.jediEnabled": true,
+  "python.jediEnabled": false,
   "python.venvPath": "~/.pyenv",
   "python.formatting.provider": "yapf",
   "list.maxHeight": 20,

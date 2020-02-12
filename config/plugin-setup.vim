@@ -43,9 +43,11 @@ endif
 
 if dein#tap('nerdtree')
   let g:NERDTreeShowHidden=1
+	let NERDTreeShowLineNumbers=1
   map <leader>nn :NERDTreeToggle<CR>
   map <F2> :NERDTreeToggle<CR>
 	map <Leader>ff :NERDTreeFind<CR>
+	autocmd FileType nerdtree setlocal relativenumber
 endif
 
 if dein#tap('coc.nvim')
