@@ -12,7 +12,7 @@ This is a place where I put all of my (Neo)vim configuration. This will be a liv
 
 Before you clone the repo, make sure you have these two requirements installed:
 
-- [shougo/dein.vim]: https://github.com/Shougo/dein.vim
+- [shougo/dein.vim](https://github.com/Shougo/dein.vim)
 - [ripgrep](https://github.com/BurntSushi/ripgrep#installation)
 
 Clone this repo! Clone to `~/.config/nvim`,
