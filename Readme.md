@@ -14,6 +14,8 @@ Before you clone the repo, make sure you have these two requirements installed:
 
 - [shougo/dein.vim](https://github.com/Shougo/dein.vim)
 - [ripgrep](https://github.com/BurntSushi/ripgrep#installation)
+- NodeJS (coc plugin will complain if there's no node installed)
+- Python 3 and 2 with the latest `neovim` package installed. (This will be required by neovim)
 
 Clone this repo! Clone to `~/.config/nvim`,
 we'll also symlink it for Vim:
