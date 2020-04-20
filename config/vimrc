@@ -56,6 +56,6 @@ call s:source_file('plugin-setup.vim')
 
 
 call s:source_file('general.vim')
-call s:source_file('filetype.vim')
+" call s:source_file('filetype.vim')
 call s:source_file('powerline.vim')
 call s:source_file('keybindings.vim')

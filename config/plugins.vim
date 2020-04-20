@@ -25,7 +25,7 @@ if dein#load_state('~/.cache/dein')
 	call dein#add('tpope/vim-fugitive')
 
 	" Javascript
-	call dein#add('prettier/vim-prettier', { 'build': 'npm install', 'on_ft': ['javascript', 'jsx', 'javascript.jsx', 'typescript', 'typescript.tsx' ] })
+	" call dein#add('prettier/vim-prettier', { 'build': 'npm install', 'on_ft': ['javascript', 'jsx', 'javascript.jsx', 'typescript', 'typescript.tsx' ] })
 	call dein#add('HerringtonDarkholme/yats.vim')
 	call dein#add('MaxMEllon/vim-jsx-pretty')
 
@@ -37,7 +37,7 @@ if dein#load_state('~/.cache/dein')
 	call dein#add('tpope/vim-rails', {'on_ft': 'ruby'})
 
 	" Go
-	call dein#add('fatih/vim-go', {'on_ft': 'go', 'hook_source': 'source $VIMPATH/plugins/vim-go.vim'})
+	call dein#add('fatih/vim-go', {'on_ft': 'go'})
 
 	" Required:
 	call dein#end()

@@ -115,7 +115,7 @@ nnoremap <silent> <space>r  :<C-u>CocList mru<cr>
 nnoremap <silent> <space>b  :<C-u>CocList buffers<cr>
 nnoremap <silent> <space>f  :<C-u>CocList files<cr>
 
-let g:coc_global_extensions = ['coc-lists','coc-json', 'coc-css', 'coc-html', 'coc-python','coc-tsserver','coc-solargraph']
+let g:coc_global_extensions = ['coc-prettier', 'coc-lists','coc-json', 'coc-css', 'coc-html', 'coc-python','coc-tsserver','coc-solargraph']
 
 " grep word under cursor
 command! -nargs=+ -complete=custom,s:GrepArgs Rg exe 'CocList grep '.<q-args>
@@ -134,3 +134,4 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " Temporary solution until I can figure out why coc breaks on murmur
 nnoremap <silent> <space><space>  :<C-u>CocStart<cr>
+

@@ -1,6 +1,6 @@
 {
   "coc.preferences.rootPatterns": [".vim", ".git", ".hg", ".projections.json"],
-  "coc.preferences.formatOnSaveFiletypes": ["python", "ruby"],
+  "coc.preferences.formatOnSaveFiletypes": ["python", "ruby", "typescript", "typescriptreact", "json"],
   "tsserver.enable": true,
   "eslint.run": "onSave",
   "suggest.echodocSupport": true,

@@ -127,8 +127,3 @@ let g:perl_fold = 1
 " }}}
 
 autocmd FileType typescript setlocal formatprg=prettier\ --parser\ typescript
-
-
-" vim: set foldmethod=marker ts=2 sw=2 tw=80 noet :
-"
-"

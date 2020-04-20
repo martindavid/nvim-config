@@ -35,3 +35,10 @@ noremap <leader>q :b#<cr>
 
 " Search with grep
 nnoremap <leader>/ :Rg<space>
+
+nnoremap <C-t><C-j> :tabr<cr>
+nnoremap <C-t><C-k> :tabl<cr>
+nnoremap <C-t><C-h> :tabp<cr>
+nnoremap <C-t><C-l> :tabn<cr>
+
+nmap <silent> <leader>/ :nohlsearch<CR>

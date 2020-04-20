@@ -4,6 +4,7 @@ set termguicolors
 set nobackup
 set nowritebackup
 set noswapfile
+set nopaste
 
 colorscheme onedark
 set background=dark
@@ -11,15 +12,14 @@ set background=dark
 filetype plugin indent on
 syntax enable
 
+
 " }}}
 " Tabs and Indents {{{
 " ----------------
-" set textwidth=100    " Text width maximum chars before wrapping
-set noexpandtab     " Don't expand tabs to spaces.
+set expandtab     " Don't expand tabs to spaces.
 set tabstop=2       " The number of spaces a tab is
 set softtabstop=2   " While performing editing operations
 set shiftwidth=2    " Number of spaces to use in auto(indent)
-set smarttab        " Tab insert blanks according to 'shiftwidth'
 set autoindent      " Use same indenting on new lines
 set smartindent
 set shiftround      " Round indent to multiple of 'shiftwidth'
@@ -35,6 +35,9 @@ set showmatch		        " highlight matching [{()}]
 set splitbelow          " Horizontal splits open below current file
 set splitright          " Vertical splits open to the right of the current file
 set hidden
+set spell
+set title
+set confirm
 
 set winwidth=30         " Minimum width for active window
 set winheight=1         " Minimum height for active window
@@ -72,7 +75,12 @@ set switchbuf+=vsplit           " Switch buffer behavior to vsplit
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-let g:python_highlight_all = 1
+" Enable toggle relative number
+" When in insert mode it will always show absolute number, in normal mode show
+" relative number
+augroup toggle_relative_number
+autocmd InsertEnter * :setlocal norelativenumber
+autocmd InsertLeave * :setlocal relativenumber
 
 " Improved Vim fold-text
 " See: http://www.gregsexton.org/2011/03/improving-the-text-displayed-in-a-fold/
@@ -97,5 +105,9 @@ function! FoldText()
 	return line . expansionString . foldSizeStr . foldPercentage . foldLevelStr
 endfunction
 
+" highlight trailing whitespace
+match ErrorMsg '\s\+$'
+" remove trailing whitespaces automatically
+autocmd BufWritePre * :%s/\s\+$//e
 
 hi CursorLine guibg=#4b5057 ctermbg=236 gui=NONE cterm=NONE

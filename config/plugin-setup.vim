@@ -55,7 +55,7 @@ endif
 
 if dein#tap('vim-prettier')
 	nmap <Leader>py :Prettier<CR>
-	let g:prettier#autoformat = 0
+	let g:prettier#autoformat = 1
 	autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 endif
 
@@ -93,3 +93,4 @@ endif
 
 " Marked app
 let g:marked_app = "Marked"
+autocmd FileType python let b:coc_root_patterns = ['.git', '.env', 'api/']
