@@ -38,6 +38,8 @@ set hidden
 set spell
 set title
 set confirm
+set mouse=a
+set scrolloff=3
 
 set winwidth=30         " Minimum width for active window
 set winheight=1         " Minimum height for active window
