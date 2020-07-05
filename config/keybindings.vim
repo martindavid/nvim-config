@@ -18,7 +18,7 @@ inoremap <Left> <nop>
 vnoremap <Up> <nop>
 vnoremap <Down> <nop>
 vnoremap <Right> <nop>
-vnoremap <Left> <nop> 
+vnoremap <Left> <nop>
 
 " I like to :quit with 'q', shrug.
 nnoremap <silent> q :<C-u>:quit<CR>
