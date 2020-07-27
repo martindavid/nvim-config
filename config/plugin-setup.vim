@@ -21,14 +21,14 @@ endif
 if dein#tap('nerdcommenter')
 	" Add spaces after comment delimiters by default
 	let g:NERDSpaceDelims = 1
-	
+
 	" Use compact syntax for prettified multi-line comments
 	let g:NERDCompactSexyComs = 1
-	
+
 	"Enable trimming of trailing whitespace when uncommenting
 	let g:NERDTrimTrailingWhitespace = 1
 
-	" Enable NERDCommenterToggle to check all selected lines is commented or not 
+	" Enable NERDCommenterToggle to check all selected lines is commented or not
 	let g:NERDToggleCheckAllLines = 1
 
 	vmap ++ <plug>NERDCommenterToggle
@@ -81,6 +81,14 @@ if dein#tap('vim-easymotion')
 	omap s/ <Plug>(easymotion-tn)
 	map  sn <Plug>(easymotion-next)
 	map  sp <Plug>(easymotion-prev)
+
+  " Move to line
+  map sL <Plug>(easymotion-bd-jk)
+  nmap sL <Plug>(easymotion-overwin-line)
+
+  " Move to word
+  map  sw <Plug>(easymotion-bd-w)
+  nmap sw <Plug>(easymotion-overwin-w)
 endif
 
 let g:delimitMate_expand_cr = 1

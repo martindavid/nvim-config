@@ -2,7 +2,7 @@
 " NERDTree
 " --------
 let g:NERDTreeMinimalUI = 1
-let g:NERDTreeWinSize = 50
+let g:NERDTreeWinSize = 150
 let g:NERDTreeCascadeOpenSingleChildDir = 1
 let g:NERDTreeCascadeSingleChildDir = 0
 let g:NERDTreeShowHidden = 1
