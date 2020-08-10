@@ -23,6 +23,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('itspriddle/vim-marked')
 	call dein#add('neoclide/coc.nvim', {'merge':0, 'rev': 'release', 'hook_source': 'source $VIMPATH/plugins/coc.vim'})
 	call dein#add('tpope/vim-fugitive')
+  call dein#add('tpope/vim-rhubarb')
 
 	" Javascript
 	" call dein#add('prettier/vim-prettier', { 'build': 'npm install', 'on_ft': ['javascript', 'jsx', 'javascript.jsx', 'typescript', 'typescript.tsx' ] })

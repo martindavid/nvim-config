@@ -1,12 +1,12 @@
 {
   "coc.preferences.rootPatterns": [".vim", ".git", ".hg", ".projections.json"],
   "coc.preferences.formatOnSaveFiletypes": [
-    "ruby",
     "python",
     "javascript",
     "typescript",
     "typescriptreact",
-    "json"
+    "json",
+    "elm"
   ],
   "tsserver.enable": true,
   "eslint.run": "onSave",
@@ -43,9 +43,6 @@
       "filetypes": ["elm"],
       "rootPatterns": ["elm.json"],
       "initializationOptions": {
-        "elmPath": "elm", // optional
-        "elmFormatPath": "elm-format", // optional
-        "elmTestPath": "elm-test", // optional
         "elmAnalyseTrigger": "change" // optional
       }
     }
