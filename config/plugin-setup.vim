@@ -1,4 +1,4 @@
-nnoremap <leader>g :Grepper -tool rg<cr>
+nnoremap <leader>g :Rg<cr>
 nnoremap <leader>G :Grepper -tool rg -buffers<cr>
 let g:grepper = { 'next_tool': '<leader>g' }
 let g:grepper.tools = ["rg", "ag"]

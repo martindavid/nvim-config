@@ -113,9 +113,10 @@ nnoremap <silent> <space>l  :<C-u>CocList locationlist<CR>
 nnoremap <silent> <space>q  :<C-u>CocList quickfix<CR>
 nnoremap <silent> <space>r  :<C-u>CocList mru<cr>
 nnoremap <silent> <space>b  :<C-u>CocList buffers<cr>
-nnoremap <silent> <space>f  :<C-u>CocList files<cr>
+nnoremap <silent> <space>f  :Files<cr>
 
 let g:coc_global_extensions = ['coc-prettier', 'coc-lists','coc-json', 'coc-css', 'coc-html', 'coc-python','coc-tsserver','coc-solargraph']
+command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
 
 " grep word under cursor
 command! -nargs=+ -complete=custom,s:GrepArgs Rg exe 'CocList grep '.<q-args>
