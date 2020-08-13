@@ -113,7 +113,9 @@ nnoremap <silent> <space>l  :<C-u>CocList locationlist<CR>
 nnoremap <silent> <space>q  :<C-u>CocList quickfix<CR>
 nnoremap <silent> <space>r  :<C-u>CocList mru<cr>
 nnoremap <silent> <space>b  :<C-u>CocList buffers<cr>
-nnoremap <silent> <space>f  :Files<cr>
+nnoremap <silent> <space>f  :GFiles<cr>
+nnoremap <silent> <space>F  :Files<cr>
+
 
 let g:coc_global_extensions = ['coc-prettier', 'coc-lists','coc-json', 'coc-css', 'coc-html', 'coc-python','coc-tsserver','coc-solargraph']
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
