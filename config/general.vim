@@ -75,6 +75,8 @@ set switchbuf=useopen,usetab    " Jump to the first open window in any tab
 set switchbuf+=vsplit           " Switch buffer behavior to vsplit
 
 autocmd StdinReadPre * let s:std_in=1
+
+" Automatically open Nerdtree on opening vim at the beginning
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Enable toggle relative number
@@ -111,5 +113,3 @@ endfunction
 match ErrorMsg '\s\+$'
 " remove trailing whitespaces automatically
 autocmd BufWritePre * :%s/\s\+$//e
-
-hi CursorLine guibg=#4b5057 ctermbg=236 gui=NONE cterm=NONE

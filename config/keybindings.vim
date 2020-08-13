@@ -25,7 +25,6 @@ nnoremap <silent> q :<C-u>:quit<CR>
 autocmd FileType man nnoremap <silent><buffer> q :<C-u>:quit<CR>
 imap jk <Esc>
 
-
 " Buffers
 nnoremap gb :ls<CR>:b<Space>
 nnoremap <leader>b :b <C-d>
@@ -33,12 +32,7 @@ nnoremap <leader>bv :vert sb <C-d>
 " switches to the last buffer
 noremap <leader>q :b#<cr>
 
-" Search with grep
-nnoremap <leader>/ :Rg<space>
-
 nnoremap <C-t><C-j> :tabr<cr>
 nnoremap <C-t><C-k> :tabl<cr>
 nnoremap <C-t><C-h> :tabp<cr>
 nnoremap <C-t><C-l> :tabn<cr>
-
-nmap <silent> <leader>/ :nohlsearch<CR>

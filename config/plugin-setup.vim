@@ -1,5 +1,5 @@
 nnoremap <leader>g :Rg<cr>
-nnoremap <leader>G :Grepper -tool rg -buffers<cr>
+
 let g:grepper = { 'next_tool': '<leader>g' }
 let g:grepper.tools = ["rg", "ag"]
 let g:grepper.jump = 1
@@ -48,9 +48,6 @@ if dein#tap('nerdtree')
   map <F2> :NERDTreeToggle<CR>
 	map <Leader>ff :NERDTreeFind<CR>
 	autocmd FileType nerdtree setlocal relativenumber
-endif
-
-if dein#tap('coc.nvim')
 endif
 
 if dein#tap('vim-prettier')
