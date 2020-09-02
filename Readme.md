@@ -55,7 +55,7 @@ All of the plugins that I use:
 | [junegunn/fzf.vim]               | A wrapper to use fzf in your vim                                  |
 | [HerringtonDarkholme/yats.vim]   | Yet Another TypeScript Syntax file for Vim                        |
 | [MaxMellon/vim-jsx-pretty]       | The React syntax highlighting and indenting plugin for vim        |
-| [tpope/vim-rails]                | A wrapper to use fzf in your vim                                  |
+| [tpope/vim-rails]                | Vim plugin for editing Ruby on Rails applications                 |
 | [fatih/vim-go]                   | Adds Go language support for Vim                                  |
 | [tmhedberg/SimpyFold]            | No-BS Python code folding for Vim                                 |
 | [davidhalter/jedi-vim]           | Using the jedi autocompletion library for VIM.                    |
