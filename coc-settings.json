@@ -24,7 +24,7 @@
   "solargraph.references": true,
   "python.jediEnabled": false,
   "python.venvPath": "~/.pyenv",
-  "python.formatting.provider": "yapf",
+  "python.formatting.provider": "black",
   "list.maxHeight": 20,
   "list.normalMappings": {
     "t": "action:tabe",

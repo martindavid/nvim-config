@@ -7,8 +7,8 @@ if dein#load_state('~/.cache/dein')
 
 	" Add or remove your plugins here:
 	call dein#add('rafi/awesome-vim-colorschemes')
-	call dein#add('scrooloose/nerdcommenter')
-  call dein#add('scrooloose/nerdtree', { 'hook_source': 'source $VIMPATH/plugins/nerdtree.vim'})
+	call dein#add('preservim/nerdcommenter')
+  call dein#add('preservim/nerdtree', { 'hook_source': 'source $VIMPATH/plugins/nerdtree.vim'})
 	call dein#add('Xuyuanp/nerdtree-git-plugin')
 	call dein#add('itchyny/vim-cursorword')
 	call dein#add('vim-airline/vim-airline')

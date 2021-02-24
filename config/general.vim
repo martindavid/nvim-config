@@ -77,7 +77,9 @@ set switchbuf+=vsplit           " Switch buffer behavior to vsplit
 autocmd StdinReadPre * let s:std_in=1
 
 " Automatically open Nerdtree on opening vim at the beginning
+autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
 
 " Enable toggle relative number
 " When in insert mode it will always show absolute number, in normal mode show
