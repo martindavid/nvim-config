@@ -117,7 +117,7 @@ nnoremap <silent> <space>f  :Files<cr>
 nnoremap <silent> <space>F  :GFiles<cr>
 
 
-let g:coc_global_extensions = ['coc-prettier', 'coc-lists','coc-json', 'coc-css', 'coc-html', 'coc-python','coc-tsserver','coc-solargraph']
+let g:coc_global_extensions = ['coc-prettier', 'coc-lists','coc-json', 'coc-css', 'coc-html', 'coc-pyright','coc-tsserver','coc-solargraph']
 command! -bang -nargs=* Rg
       \ call fzf#vim#grep(
       \   'rg --column --line-number --no-heading --color=always --smart-case --hidden --follow --glob "!.git/*" '.shellescape(<q-args>), 1,
@@ -138,3 +138,27 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 " Temporary solution until I can figure out why coc breaks on murmur
 nnoremap <silent> <space><space>  :<C-u>CocStart<cr>
 let g:coc_fzf_preview = 'right:50%'
+
+
+function! s:check_back_space() abort
+	let col = col('.') - 1
+	return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+" Insert <tab> when previous text is space, refresh completion if not.
+inoremap <silent><expr> <TAB>
+			\ coc#pum#visible() ? coc#pum#next(1):
+			\ <SID>check_back_space() ? "\<Tab>" :
+			\ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+
+if has('nvim')
+	inoremap <silent><expr> <c-space> coc#refresh()
+else
+	inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
+
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#_select_confirm()
+			\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"

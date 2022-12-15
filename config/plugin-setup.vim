@@ -67,7 +67,7 @@ if dein#tap('emmet-vim')
 endif
 
 if dein#tap('vim-easymotion')
-	nmap ss <Plug>(easymotion-s2)
+	nmap ss <Plug>(easymotion-s3)
 	nmap sd <Plug>(easymotion-s)
 	nmap sf <Plug>(easymotion-overwin-f)
 	map  sh <Plug>(easymotion-linebackward)
